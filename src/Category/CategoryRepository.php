@@ -34,6 +34,11 @@ class CategoryRepository extends BaseRepository {
         return $this->model->where('type', '=', 'Post');
     }
 
+    public function getByType($type)
+    {
+        return $this->model->OfType($type);
+    }
+
     public function type()
     {
         return $this->type();

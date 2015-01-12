@@ -17,7 +17,7 @@
 
         <div class="form-group">
             {{ Form::label('type', 'Type:') }}
-            {{ Form::select('type',['EventModel' => 'Event','Post' => 'Blog'],NULL,array('class'=>'form-control')) }}
+            {{ Form::select('type',['EventModel' => 'Event','Post' => 'Blog', 'Product' => 'Product'],NULL,array('class'=>'form-control')) }}
         </div>
         <div class="form-group">
             {{ Form::submit('Submit', array('class' => 'btn btn-info')) }}

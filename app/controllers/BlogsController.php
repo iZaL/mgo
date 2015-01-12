@@ -87,4 +87,9 @@ class BlogsController extends BaseController {
 
         $this->render('site.blog.consultancy', compact('posts'));
     }
+
+    public function getAbout(){
+        $post = $this->blogRepository->getAboutUs()->first();
+        $this->render('site.blog.about',compact('post'));
+    }
 }

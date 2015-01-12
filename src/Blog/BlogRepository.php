@@ -23,11 +23,20 @@ class BlogRepository extends BaseRepository {
 
     public function getConsultancyPosts()
     {
-        return $this->model->with(['category','photos','author'])
-                ->select('posts.*')
-                ->leftJoin('categories','categories.id','=','posts.category_id')
-                ->where('categories.name_en','=','consultancy')
-                ->orderBy('posts.created_at','DESC')
-                ->paginate(10);
+        return $this->model->with(['category', 'photos', 'author'])
+            ->select('posts.*')
+            ->leftJoin('categories', 'categories.id', '=', 'posts.category_id')
+            ->where('categories.name_en', '=', 'consultancy')
+            ->orderBy('posts.created_at', 'DESC')
+            ->paginate(10);
+    }
+
+    public function getAboutUs()
+    {
+        return $this->model->select('posts.*')
+            ->leftJoin('categories', 'categories.id', '=', 'posts.category_id')
+            ->where('categories.name_en', '=', 'About')
+            ->orderBy('posts.created_at', 'DESC')
+            ->limit(1);
     }
 }
