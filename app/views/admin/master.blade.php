@@ -15,6 +15,7 @@
         {{ HTML::style('assets/css/datatables.css') }}
         {{ HTML::style('assets/css/custom.css') }}
 
+
         <style>
             .container-fluid {
                 padding:0 50px;
@@ -61,6 +62,7 @@
     {{ HTML::script('assets/js/nicEdit.js') }}
     {{ HTML::script('assets/js/datatables-bootstrap.js') }}
     {{ HTML::script('assets/js/datatables.js') }}
+    {{ HTML::script('packages/tinymce/tinymce.min.js') }}
 
     <script type="text/javascript">
 //        $('.wysihtml5').wysihtml5();
@@ -99,7 +101,19 @@
                 var length_sel = datatable.closest('.dataTables_wrapper').find('div[id$=_length] select');
                 length_sel.addClass('form-control input-sm');
             });
-            nicEditors.allTextAreas();
+//            nicEditors.allTextAreas();
+            tinymce.init({
+                selector: "textarea",
+                plugins: [
+                    "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+                    "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+                    "save table contextmenu directionality emoticons template paste textcolor jbimages directionality"
+                ],
+                toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image jbimages | print preview media fullpage | forecolor backcolor emoticons | ltr rtl",
+                relative_urls : false
+
+            });
+
         });
     </script>
 
