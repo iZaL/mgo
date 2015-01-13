@@ -12,6 +12,7 @@
             <ul class="nav navbar-nav">
                 <li{{ (Request::is('admin/event*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/') }}}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
                 <li{{ (Request::is('admin/products*') ? ' class="active"' : '') }}><a href="{{{ URL::action('AdminProductsController@index') }}}"><span class="glyphicon glyphicon-list-alt"></span> Products</a></li>
+                <li{{ (Request::is('admin/gallery*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/gallery') }}}"><span class="glyphicon glyphicon-film"></span> Gallery</a></li>
                 <li{{ (Request::is('admin/blogs*') ? ' class="active"' : '') }}><a href="{{{ URL::action('AdminBlogsController@index') }}}"><span class="glyphicon glyphicon-list-alt"></span> Blog</a></li>
                 <li{{ (Request::is('admin/category*') ? ' class="active"' : '') }}><a href="{{{ URL::action('AdminCategoriesController@index') }}}"><span class="glyphicon glyphicon-tag"></span> Category</a></li>
                 <li class="dropdown{{ (Request::is('admin/users*|admin/roles*') ? ' active' : '') }}">
@@ -29,11 +30,8 @@
                         <span class="glyphicon glyphicon-asterisk"></span> Settings <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li{{ (Request::is('admin/country*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/country') }}}"><span class="glyphicon glyphicon-globe"></span> Add/Edit Country</a></li>
-                        <li{{ (Request::is('admin/locations*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/locations') }}}"><span class="glyphicon glyphicon-map-marker"></span> Add/Edit Locations</a></li>
                         <li{{ (Request::is('admin/comments*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/comments') }}}"><span class="glyphicon glyphicon-comment"></span> Edit Comments</a></li>
                         <li{{ (Request::is('admin/tags*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/tags') }}}"><span class="glyphicon glyphicon-tag"></span> Add/Edit Tags</a></li>
-                        <li{{ (Request::is('admin/ads*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/ads') }}}"><span class="glyphicon glyphicon-pushpin"></span> Ads</a></li>
                         <li{{ (Request::is('admin/contact-us*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/contact-us') }}}"><span class="glyphicon glyphicon-envelope"></span> Edit Contact Details</a></li>
                     </ul>
                 </li>

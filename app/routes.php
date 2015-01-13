@@ -133,7 +133,15 @@ Route::get('category/{id}/blog', array('as' => 'CategoryPosts', 'uses' => 'Categ
  ********************************************************************************************************/
 Route::post('newsletter/subscribe', 'NewslettersController@subscribe');
 
-//Route::get('newsletter', 'NewslettersController@index');
+
+/*********************************************************************************************************
+ * Gallery Routes
+ ********************************************************************************************************/
+Route::resource('gallery', 'GalleriesController', array('index','view') );
+
+Route::get('gallery/{id}/album', ['as'=>'album','uses'=>'GalleriesController@showAlbum']);
+
+
 
 /*********************************************************************************************************
  * MISC ROUTES
@@ -318,6 +326,18 @@ Route::group(array('prefix' => 'admin', 'before' => array('Auth', 'Moderator')),
      * Admin Products
      ********************************************************************************************************/
     Route::resource('products', 'AdminProductsController');
+
+    /*********************************************************************************************************
+     * Gallery Routes
+     ********************************************************************************************************/
+
+    Route::get('gallery/{id}/photos','AdminGalleriesController@getPhotos');
+
+    Route::post('gallery/{id}/photos','AdminGalleriesController@postPhotos');
+
+    Route::post('gallery/{id}/video','AdminGalleriesController@postVideos');
+
+    Route::resource('gallery','AdminGalleriesController');
 
     /*********************************************************************************************************
      * Admin Dashboard

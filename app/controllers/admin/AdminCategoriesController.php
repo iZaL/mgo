@@ -37,7 +37,8 @@ class AdminCategoriesController extends AdminBaseController {
 	 */
 	public function create()
 	{
-		return $this->render('admin.categories.create');
+		$types = [''=>'Select a Category Type'] + ['EventModel' => 'Event','Post' => 'Blog', 'Product' => 'Product','Gallery'=>'Gallery'];
+		return $this->render('admin.categories.create',compact('types'));
 	}
 
 	/**
@@ -82,13 +83,14 @@ class AdminCategoriesController extends AdminBaseController {
 	public function edit($id)
 	{
 		$category = $this->categoryRepository->findById($id);
+		$types = [''=>'Select a Category Type'] + ['EventModel' => 'Event','Post' => 'Blog', 'Product' => 'Product','Gallery'=>'Gallery'];
 
 		if (is_null($category))
 		{
 			return Redirect::route('admin.categories.index');
 		}
 
-		return $this->render('admin.categories.edit', compact('category'));
+		return $this->render('admin.categories.edit', compact('category','types'));
 	}
 
 	/**

@@ -34,6 +34,13 @@
 
         <div class="col-md-12">
             <div class="form-group">
+                <label class="control-label" for="title">Product Price</label>
+                {{ Form::text('price', null, ['class' => 'form-control']) }}
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="form-group">
                 <label class="control-label" for="content">Description in Arabic</label>
                 {{ Form::textarea('description_ar', null, ['class' => 'form-control wysihtml5']) }}
             </div>

@@ -5,7 +5,7 @@ use Acme\Core\BaseValidator;
 class UpdateValidator extends BaseValidator {
 
     protected $rules = array(
-        'name_ar'       => 'required',
+        'name_ar'        => 'required',
         'description_ar' => 'required',
         'category_id'    => 'required'
     );
@@ -13,7 +13,7 @@ class UpdateValidator extends BaseValidator {
     public function getInputData()
     {
         return array_only($this->inputData, [
-            'category_id', 'name_ar', 'name_en', 'description_ar', 'description_en'
+            'category_id', 'name_ar', 'name_en', 'description_ar', 'description_en', 'price'
         ]);
     }
 }

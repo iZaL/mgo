@@ -18,7 +18,7 @@ class CreateValidator extends BaseValidator {
     public function getInputData()
     {
         return array_only($this->inputData, [
-            'category_id', 'name_ar', 'name_en', 'description_ar', 'description_en'
+            'category_id', 'name_ar', 'name_en', 'description_ar', 'description_en', 'price'
         ]);
     }
 }
