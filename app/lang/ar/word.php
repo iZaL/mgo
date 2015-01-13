@@ -128,5 +128,7 @@ return [
     'tags' => 'علامات',
     'request_reorganize_events' => 'طلب اعادة الفعالية',
     'products' => 'منتجات',
-    'about_us'=>'نبذة عنا'
+    'about_us'=>'نبذة عنا',
+    'gallery' =>' معرض صور ',
+    'album' =>' معرض صور '
 ];

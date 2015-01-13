@@ -137,7 +137,7 @@ Route::post('newsletter/subscribe', 'NewslettersController@subscribe');
 /*********************************************************************************************************
  * Gallery Routes
  ********************************************************************************************************/
-Route::resource('gallery', 'GalleriesController', array('index','view') );
+Route::resource('gallery', 'GalleriesController' );
 
 Route::get('gallery/{id}/album', ['as'=>'album','uses'=>'GalleriesController@showAlbum']);
 

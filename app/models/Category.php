@@ -22,6 +22,10 @@ class Category extends BaseModel {
         return $this->hasMany('Blog');
     }
 
+    public function galleries(){
+        return $this->hasMany('Gallery');
+    }
+
     public function scopeOfType($query, $type)
     {
         return $query->where('type', '=', $type);

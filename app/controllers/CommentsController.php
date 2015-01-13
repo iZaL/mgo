@@ -46,13 +46,14 @@ class CommentsController extends BaseController {
             return Redirect::back()->withInput()->withErrors($val->getErrors());
         }
 
-        if ( !$record = $this->commentRepository->create(array_merge(['user_id' => Auth::user()->id,'commentable_id'=>$commentable_id,'commentable_type'=>$commentable_type], $val->getInputData())) ) {
+        if ( !$record = $this->commentRepository->create(array_merge(['user_id' => Auth::user()->id, 'commentable_id' => $commentable_id, 'commentable_type' => $commentable_type], $val->getInputData())) ) {
             return Redirect::back()->with('errors', $this->commentRepository->errors())->withInput();
         }
 
-        if($commentable_type == 'EventModel') {
-
+        if ( $commentable_type == 'EventModel' ) {
             return Redirect::action('EventsController@show', $id)->with('success', trans('word.comment_posted'));
+        } elseif ( $commentable_type == 'Product' ) {
+            return Redirect::action('ProductsController@show', $id)->with('success', trans('word.comment_posted'));
         } else {
             return Redirect::action('BlogsController@show', $id)->with('success', trans('word.comment_posted'));
 

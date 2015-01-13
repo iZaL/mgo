@@ -28,20 +28,36 @@ class ProductsController extends BaseController {
      * @internal param UserRepository $userRepository
      * @internal param CountryRepository $countryRepository
      */
-    public function __construct(TagRepository $tagRepository,  CategoryRepository $categoryRepository , ProductRepository $productRepository)
+    public function __construct(TagRepository $tagRepository, CategoryRepository $categoryRepository, ProductRepository $productRepository)
     {
-        $this->productRepository = $productRepository;
+        $this->productRepository  = $productRepository;
         $this->categoryRepository = $categoryRepository;
-        $this->tagRepository = $tagRepository;
+        $this->tagRepository      = $tagRepository;
         parent::__construct();
     }
 
     public function index()
     {
-        $posts = $this->productRepository->getAllPaginated();
+        $posts      = $this->productRepository->getAllPaginated();
         $categories = $this->categoryRepository->getByType('Product')->get();
-        $tags = $this->tagRepository->getBlogTags();
-        $this->render('site.products.index',compact('posts','categories','tags'));
+        $tags       = $this->tagRepository->getBlogTags();
+        $this->render('site.products.index', compact('posts', 'categories', 'tags'));
     }
 
+    /**
+     * View a blog post.
+     *
+     * @param $id
+     * @internal param string $slug
+     * @return View
+     */
+    public function show($id)
+    {
+        // Get this blog post data
+        $post = $this->productRepository->findById($id, ['category', 'photos']);
+
+        $this->title = $post->title;
+
+        $this->render('site.products.view', compact('post'));
+    }
 }

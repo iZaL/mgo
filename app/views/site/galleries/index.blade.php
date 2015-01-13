@@ -6,31 +6,28 @@
 
 @section('content')
 <div class="row">
-    @foreach($categories as $category)
+    @foreach($galleries as $gallery)
         <div class="col-sm-6 col-md-6">
             <div class="thumbnail gallery">
-                @if(count($category->galleries) && count($category->galleries[0]->photos))
-                    <a href="{{ action('GalleriesController@show',$category->id) }}">
-                        {{ HTML::image('uploads/medium/'.$category->galleries[0]->photos[0]->name.'','image1',array('class'=>'img-responsive img-thumbnail')) }}
+                @if(count($gallery->photos))
+                    <a href="{{ action('GalleriesController@show',$gallery->id) }}">
+                        {{ HTML::image('uploads/medium/'.$gallery->photos[0]->name.'','image1',array('class'=>'img-responsive img-thumbnail')) }}
                     </a>
                 @else
-                    <a href="{{ action('GalleriesController@show',$category->id) }}">
+                    <a href="{{ action('GalleriesController@show',$gallery->id) }}">
                         <img src="http://placehold.it/350x310" class="img-responsive img-thumbnail">
                     </a>
                 @endif
                 <div class="caption">
                     <p class="text-center">
-                        <a href="{{ action('GalleriesController@show',$category->id) }}">
-                            {{ $category->name }}
+                        <a href="{{ action('GalleriesController@show',$gallery->id) }}">
+                            {{ $gallery->title }}
                         </a>
                     </p>
-                    <a href="#" class="pull-right"><i class="fa fa-camera"></i>
-                        {{ count($category->galleries) }}
-                    </a>
                 </div>
             </div>
         </div>
     @endforeach
 </div>
-{{ $categories->appends(Request::except('page'))->links() }}
+{{ $galleries->appends(Request::except('page'))->links() }}
 @stop

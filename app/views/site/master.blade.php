@@ -19,7 +19,6 @@
         </style>
     {{ HTML::style('css/bootstrap.min.css') }}
     {{ HTML::style('css/font-awesome.min.css') }}
-    {{ HTML::style('css/intlTelInput.css'); }}
     @if ( App::getLocale() == 'ar')
         {{ HTML::style('css/bootstrap-rtl.min.css') }}
     @endif
@@ -80,7 +79,6 @@
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
-    @include('site.partials.google-analytics')
     @show
 
 </body>
