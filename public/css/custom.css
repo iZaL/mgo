@@ -1,8 +1,19 @@
 
+body {
+    background-size: 10%;
+    background-image: url('../images/background.png') !important;
+
+}
 .container {
     background: #ffffff;
     border-right: 15px solid white;
     border-left: 15px solid white;
+}
+#header-section {
+    background-image: url('../images/headerbg.png');
+    background-position: top left;
+    background-size: 50%;
+    background-repeat: no-repeat;
 }
 a:hover{
     color:#5bb75b;
@@ -50,18 +61,24 @@ a:hover{
     border-color: white !important;
 }
 
+.nav {
+    width: 100%;
+}
+.nav li {
+    min-width: 15%;
+}
 .navbar-default .navbar-nav > li > a {
     color: #636363 !important;
     top: 0px;
     position: relative;
     background-color: transparent !important;
     border-color: none !important;
-    background-image: url("../images/MenuInactive.png");
+    background-image: url("../images/Menu01.png");
     background-size: 100%;
     background-position: right;
     background-repeat: no-repeat;
     padding: 16px 27px !important;
-    width: 180px;
+    width: 100%;
     padding-right: 11px;
     padding-left: 11px;
     margin-right: 0.5px;
@@ -71,7 +88,7 @@ a:hover{
 .navbar-default .navbar-nav > li > a:hover {
     color: #d0d0d0 !important;
     border-color: none !important;
-    background-image: url("../images/MenuActive.png");
+    background-image: url("../images/Menu01.png");
 }
 
 .navbar-default .navbar-brand {

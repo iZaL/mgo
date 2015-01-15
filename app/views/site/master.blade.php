@@ -2,8 +2,8 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>{{ ! empty($title) ? $title . ' - ' : '' }} MGOPremium</title>
-
+    <title>{{ ! empty($title) ? $title . ' - ' : '' }}</title>
+<!-- usama -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     @section('style')
@@ -31,7 +31,7 @@
 <body>
     <div class="container">
         <!-- header -->
-        <div class="row">
+        <div class="row" id="header-section">
             <div class="col-md-4 col-sm-4 col-xs-12">
                 <a href="/">{{ HTML::image('images/Logo.png','kaizen',array('class'=>'img-responsive')) }}</a>
             </div>
