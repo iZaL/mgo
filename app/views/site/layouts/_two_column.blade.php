@@ -2,8 +2,16 @@
     @section('content')
     @show
 </div>
+<!-- Show only in big Screen -->
+
 <div class="col-md-4 col-xs-12">
     @section('sidebar')
-    <h1>Sidebar</h1>
+
+    @show
+
+</div>
+<div class="col-md-4 col-sm-10 visible-lg visible-md visible-sm">
+    @section('login')
+        @include('site.partials.login')
     @show
 </div>

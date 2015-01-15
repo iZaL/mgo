@@ -11,7 +11,6 @@
         @import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
         html,body {
             font-family: 'Droid Arabic Kufi' !important;
-            background: #f5f5f5 !important;
         }
         h1,h2,h3,h4,span,p,div,table {
         font-family: 'Droid Arabic Kufi' !important;
@@ -36,12 +35,7 @@
                 <a href="/">{{ HTML::image('images/Logo.png','kaizen',array('class'=>'img-responsive')) }}</a>
             </div>
 
-            <!-- Show only in big Screen -->
-            <div class="col-md-6 col-sm-10 visible-lg visible-md visible-sm top30">
-                @section('login')
-                    @include('site.partials.login')
-                @show
-            </div>
+
 
         </div>
         <div class="row">

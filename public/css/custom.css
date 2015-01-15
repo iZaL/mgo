@@ -1,13 +1,19 @@
+html {
+    background: #273466; /* Old browsers */
+    background: -moz-linear-gradient(top,  #273466 0%, #11467c 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#273466), color-stop(100%,#11467c)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #273466 0%,#11467c 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #273466 0%,#11467c 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #273466 0%,#11467c 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #273466 0%,#11467c 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#273466', endColorstr='#11467c',GradientType=0 ); /* IE6-9 */
 
-body {
-    background-size: 10%;
-    background-image: url('../images/background.png') !important;
+    background-size: cover;
 
 }
 .container {
-    background: #ffffff;
-    border-right: 15px solid white;
-    border-left: 15px solid white;
+    background-size: 10px;
+    background-image: url('../images/background.png') !important;
 }
 #header-section {
     background-image: url('../images/headerbg.png');
@@ -26,14 +32,15 @@ a:hover{
     /*box-shadow: 2px 2px 15px #888888 !important;*/
     border: 0px;
     background-color: white !important;
+    margin: 10px;
 }
 
 .panel-heading {
     position: relative;
     background-color: transparent !important;
     border-color: none !important;
-    background-image: url("../images/SlidesActive.png");
-    background-size: 60%;
+    background-image: url("../images/Menu01.png");
+    background-size: 100%;
     background-position: right;
     background-repeat: no-repeat;
     color: #FFF !important;
@@ -43,12 +50,7 @@ a:hover{
 .panel-body {
     padding-top: 25px;
     overflow: hidden !important;
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #E6E6E6), color-stop(1, #C7C7C7));
-    background-image: -o-linear-gradient(bottom, #E6E6E6 0%, #C7C7C7 100%);
-    background-image: -moz-linear-gradient(bottom, #E6E6E6 0%, #C7C7C7 100%);
-    background-image: -webkit-linear-gradient(bottom, #E6E6E6 0%, #C7C7C7 100%);
-    background-image: -ms-linear-gradient(bottom, #E6E6E6 0%, #C7C7C7 100%);
-    background-image: linear-gradient(to bottom, #E6E6E6 0%, #C7C7C7 100%);
+    background-color: white;
 }
 
 #side-instagram .panel-default {
@@ -57,12 +59,13 @@ a:hover{
 }
 
 .navbar-default {
-    background-color: white !important;
-    border-color: white !important;
+    border: none;
+    background-color: transparent !important;
 }
 
 .nav {
     width: 100%;
+
 }
 .nav li {
     min-width: 15%;
@@ -642,7 +645,10 @@ span.tag:after {
     border: 1px solid #ccc;
 }
 #footer {
-    margin:50px 0;
+
+}
+.footer {
+    background-color: #000000;
 }
 
 .social-icons a {
