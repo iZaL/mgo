@@ -13,5 +13,6 @@
 <div class="col-md-4 col-sm-10 visible-lg visible-md visible-sm">
     @section('login')
         @include('site.partials.login')
+        @include('site.partials.newsletter')
     @show
 </div>

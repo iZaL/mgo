@@ -1,4 +1,3 @@
-
 <a type="button" class="btn btn-info btn-default btn-sm" href="{{ action('UserController@getProfile', Auth::user()->id) }}">
     <i class="glyphicon glyphicon-user" style="font-size: 11px;"></i>&nbsp;{{ trans('word.profile') }}
 </a>
