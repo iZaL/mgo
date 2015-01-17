@@ -7,13 +7,8 @@
 @stop
 
 @section('content')
-
     @foreach ($posts as $post)
-
         @include('site.blog._results')
-
     @endforeach
-
     {{ $posts->links() }}
-
 @stop

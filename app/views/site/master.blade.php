@@ -35,8 +35,6 @@
                 <a href="/">{{ HTML::image('images/Logo.png','kaizen',array('class'=>'img-responsive')) }}</a>
             </div>
 
-
-
         </div>
         <div class="row">
             <div class="row">
@@ -50,7 +48,6 @@
                 </div>
             </div>
             <!-- End mobile Div -->
-
             <div class="row">
                 <div class="col-md-12">
                     @include('site.partials.notification')

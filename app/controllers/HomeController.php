@@ -2,30 +2,35 @@
 
 use Acme\Ad\AdRepository;
 use Acme\EventModel\EventRepository;
+use Acme\Gallery\GalleryRepository;
 
 class HomeController extends BaseController {
 
     private $eventRepository;
 
     private $adRepository;
+    /**
+     * @var GalleryRepository
+     */
+    private $galleryRepository;
 
     /**
-     * @param EventRepository $eventRepository
+     * @param GalleryRepository $galleryRepository
      * @param AdRepository $adRepository
+     * @internal param EventRepository $eventRepository
      */
-    function __construct(EventRepository $eventRepository, AdRepository $adRepository)
+    function __construct(GalleryRepository $galleryRepository, AdRepository $adRepository)
     {
-        $this->eventRepository = $eventRepository;
         $this->adRepository    = $adRepository;
+        $this->galleryRepository = $galleryRepository;
         parent::__construct();
     }
 
     public function index()
     {
-        $events = $this->eventRepository->getSliderEvents();
+        $galleries = $this->galleryRepository->getImageSlider();
         $ads    = $this->adRepository->getAds();
-
-        $this->render('site.home', compact('events', 'ads'));
+        $this->render('site.home', compact('galleries', 'ads'));
     }
 
     /**

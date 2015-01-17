@@ -20,6 +20,10 @@ class BlogRepository extends BaseRepository {
         $this->model = $model;
     }
 
+    public function getAll($with = [])
+    {
+        return $this->model->with($with);
+    }
 
     public function getConsultancyPosts()
     {

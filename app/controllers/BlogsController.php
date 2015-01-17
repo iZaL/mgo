@@ -50,8 +50,20 @@ class BlogsController extends BaseController {
     {
         // Get all the blog posts
         $this->title = trans('word.blog');
-
-        $posts = $this->blogRepository->getAllPaginated(['category', 'photos', 'author']);
+        $search      = trim(Input::get('search'));
+        if ( !empty($search) ) {
+            $posts = $this->blogRepository->getAll()
+                ->where(function ($query) use ($search) {
+                    if ( !empty($search) ) {
+                        $query->where('title_ar', 'LIKE', "%$search%")
+                            ->orWhere('title_en', 'LIKE', "%$search%");
+                    }
+                })
+                ->orderBy('created_at', 'ASC')
+                ->paginate(10);
+        } else {
+            $posts = $this->blogRepository->getAllPaginated(['category', 'photos', 'author']);
+        }
 
         $categories = $this->categoryRepository->getPostCategories()->get();
 

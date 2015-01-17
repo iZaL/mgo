@@ -2,31 +2,12 @@
 
 @section('style')
     @parent
-    <style>
-        .panel-primary {
-            border-color: rgba(232, 241, 242, 1);
-            border-top:none;
-        }
-        .panel > .list-group {
-            margin: 10px;
-            border:#cccccc 1px ;
-        }
-    </style>
+
 @stop
 
 @section('content')
 
     <div class="col-md-12">
-        <ul class="nav nav-tabs" id="myTab">
-            <li class="active"><a href="#profile" data-toggle="tab">{{ trans('word.profile') }}</a></li>
-
-            @if($user->isOwner())
-                <li><a href="#favorites" data-toggle="tab">{{ trans('word.favorites') }}</a></li>
-                <li><a href="#subscriptions" data-toggle="tab">{{ trans('word.subscriptions') }}</a></li>
-                <li><a href="#followings" data-toggle="tab">{{ trans('word.followings') }}</a></li>
-            @endif
-
-        </ul>
 
         <div class="tab-content">
 
@@ -43,40 +24,6 @@
                 </div>
 
             </div>
-            @if($user->isOwner())
-                <div class="tab-pane" id="favorites">
-                    <div class="panel panel-primary">
-                        <ul class="list-group">
-                            @foreach($user->favorites as $event)
-                                @include('site.events._results')
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
-                <div class="tab-pane" id="subscriptions">
-                    <div class="panel panel-primary">
-                        <ul class="list-group">
-                            @foreach($user->subscriptions as $event)
-                                @include('site.events._results')
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
-                <div class="tab-pane" id="followings">
-                    <div class="panel panel-primary">
-                        <ul class="list-group">
-                            @foreach($user->followings as $event)
-                                @include('site.events._results')
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
-            @endif
         </div>
     </div>
-    <script>
-        $(function () {
-            $('#myTab a:last').tab('show')
-        })
-    </script>
 @stop
