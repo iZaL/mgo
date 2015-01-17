@@ -64,7 +64,7 @@
 @section('content')
     @parent
     {{--@include('site.galleries.slider')--}}
-    <div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 600px; height: 300px; overflow: hidden; ">
+    <div id="slider1_container" class="col-md-12" style="position: relative; top: 0px; left: 0px; width: 600px; height: 300px; overflow: hidden; ">
         <!-- Loading Screen -->
         <div u="loading" style="position: absolute; top: 0px; left: 0px;">
             <div style="filter: alpha(opacity=70); opacity:0.7; position: absolute; display: block;
