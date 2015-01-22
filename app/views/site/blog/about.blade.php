@@ -7,7 +7,6 @@
                 <p class="text-justify">{{ $post->description }}</p>
             </div>
         </div>
-
     </div>
 
 @stop
