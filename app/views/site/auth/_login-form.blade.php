@@ -11,8 +11,12 @@
             {{ Form::password('password',['class'=>'form-control', 'placeholder'=> trans('word.password')]) }}
         </div>
     </div>
-    {{ Form::checkbox('remember', '1', true,  ['id' => 'remember']) }}
-    {{ trans('word.remember')}}
-    <button type="submit" class="btn btn-default">{{ trans('word.login') }}</button>
-    <a href="{{ action('AuthController@getSignup') }}" type="submit" class="btn btn-default">{{ trans('word.register') }}</a>
+    <div class="row pull-left">
+        <div class="col-md-12">
+        {{ Form::checkbox('remember', '1', true,  ['id' => 'remember']) }}
+        {{ trans('word.remember')}}
+        <button type="submit" class="btn btn-primary">{{ trans('word.login') }}</button>
+        <a href="{{ action('AuthController@getSignup') }}" type="submit" class="btn btn-primary">{{ trans('word.register') }}</a>
+        </div>
+    </div>
 {{ Form::close() }}

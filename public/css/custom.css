@@ -68,7 +68,8 @@ a:hover{
 
 }
 .nav li {
-    min-width: 15%;
+    min-width: 16%;
+    padding: 5px;
 }
 .navbar-default .navbar-nav > li > a {
     color: #636363 !important;
@@ -89,7 +90,9 @@ a:hover{
 }
 
 .navbar-default .navbar-nav > li > a:hover {
-    color: #d0d0d0 !important;
+    color: #020031 !important;
+    width: 102%;
+    font-size: 102%;
     border-color: none !important;
     background-image: url("../images/Menu01.png");
 }

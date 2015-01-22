@@ -1,5 +1,5 @@
-<div class="col-md-12" style="padding: 20px; border:1px solid white ; margin-bottom: 20px; background-color: #ececec !important;">
-
+<div class="col-md-12" >
+    <div class="panel-body">
             <div class="col-md-3">
                 @if(count($post->photos))
                     {{ HTML::image('uploads/medium/'.$post->photos[0]->name.'','image1',array('class'=>'img-responsive img-thumbnail')) }}
@@ -36,6 +36,6 @@
                 </div>
 
             </div>
-
-
-        </div>
+    </div>
+    </br>
+</div>
