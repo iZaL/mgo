@@ -6,15 +6,12 @@
 
 <div class="col-md-4 col-xs-12">
     @section('sidebar')
-
-    @show
-
-</div>
-<div class="col-md-4 col-sm-10 visible-lg visible-md visible-sm">
-    @section('login')
         @include('site.blog._latest')
         @include('site.partials.login')
         @include('site.blog.search')
         @include('site.partials.newsletter')
     @show
+</div>
+<div class="col-md-4 col-sm-10 visible-lg visible-md visible-sm">
+
 </div>
