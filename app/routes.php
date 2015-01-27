@@ -146,6 +146,14 @@ Route::get('gallery/{id}/album', ['as'=>'album','uses'=>'GalleriesController@sho
 /*********************************************************************************************************
  * MISC ROUTES
  ********************************************************************************************************/
+
+Route::get('language/{lang}',
+    array(
+        'as' => 'language.select',
+        'uses' => 'LocaleController@setLocale'
+    )
+);
+
 Route::get('forbidden', function () {
     return View::make('error.forbidden');
 });

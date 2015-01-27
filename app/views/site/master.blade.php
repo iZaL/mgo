@@ -40,7 +40,12 @@
     </div>
     <div class="row">
         <div class="row">
-            @include('site.partials.navigation')
+            <div class="col-md-11">
+                @include('site.partials.navigation')
+            </div>
+            <div class="col-md-1">
+                @include('site.partials.locale')
+            </div>
         </div>
 
         <!-- show only in mobiles -->

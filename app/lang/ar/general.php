@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'email_default_name'                => 'كايزن',
+    'email_default_name'                => 'Mgo Premium',
     'favorite'                          => 'ستضاف الفعالية إلى قائمة المفضلة في حسابك',
     'follow'                            => 'للحصول على آخر أخبار الفعالية ',
     'subscribe'                         => 'لحجز مقعد حضورك للفعالية ',

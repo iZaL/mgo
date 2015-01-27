@@ -10,6 +10,7 @@
 | your classes in the "global" namespace without Composer updating.
 |
 */
+App::setLocale(Session::get('lang', 'en'));
 
 ClassLoader::addDirectories(array(
 
