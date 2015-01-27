@@ -80,7 +80,6 @@ abstract class BaseRepository {
             if ( ! is_array($with) ) throw new InvalidArgumentException;
 
             return $this->model->with($with)->latest()->paginate($perPage);
-
         }
 
         return $this->model->paginate($perPage);
