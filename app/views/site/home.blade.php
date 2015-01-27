@@ -81,10 +81,12 @@
                     <!-- Slides Container -->
                     @foreach($gallery->photos as $photo)
                         <div>
-                            <img u="image" src="/uploads/large/{{$photo->name}}"/>
-                            <div u="caption" t="team-transition" style="position: absolute; bottom: 0px; width: 100%;height: 50px; background:#000 ; opacity: .8">
-                                {{$gallery->title}}
-                            </div>
+                            <a u="image" href="{{action('GalleriesController@show',$gallery->id)}}">
+                                <img src="/uploads/large/{{$photo->name}}"/>
+                                <div u="caption" t="team-transition" style="position: absolute; bottom: 0px; width: 100%;height: 50px; background:#000 ; opacity: .8">
+                                    {{$gallery->title}}
+                                </div>
+                            </a>
                         </div>
                     @endforeach
                 @endif
