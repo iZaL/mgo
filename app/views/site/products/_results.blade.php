@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-sm-6">
+    <div class="col-lg-4 col-md-4 col-sm-6">
         <div class="col-item">
             <div class="photo">
                 @if(count($post->photos))
