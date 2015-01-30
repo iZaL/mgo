@@ -52,7 +52,7 @@ class BlogsController extends BaseController {
         $this->title = trans('word.blog');
         $search      = trim(Input::get('search'));
         if ( !empty($search) ) {
-            $posts = $this->blogRepository->getAll()
+            $posts = $this->blogRepository->model
                 ->where(function ($query) use ($search) {
                     if ( !empty($search) ) {
                         $query->where('title_ar', 'LIKE', "%$search%")
