@@ -3,7 +3,6 @@
 @section('content')
 
     <div class="col-md-12">
-        <div class="alert alert-info">{{ trans('auth.signup.valid_information')}}</div>
 
         {{ Form::open(array('method' => 'POST', 'action'=>array('AuthController@postSignup'),'class'=>'form')) }}
 

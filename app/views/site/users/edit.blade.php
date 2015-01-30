@@ -5,8 +5,6 @@
 
         <div class="col-md-12">
 
-            <div class="alert alert-info">{{ trans('auth.signup.valid_information')}}</div>
-
             <div class="form-group">
                 <div class="row">
                     <div class="col-sm-12 col-md-6">
