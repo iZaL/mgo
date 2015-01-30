@@ -1,4 +1,4 @@
-@extends('admin.master')
+	@extends('admin.master')
 
 {{-- Web site Title --}}
 @section('title')

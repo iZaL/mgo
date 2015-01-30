@@ -11,12 +11,6 @@
 
     {{ Form::open(array('method' => 'POST', 'action' => array('AdminBlogsController@store'), 'role'=>'form', 'files' => true)) }}
     <div class="row">
-        <div class="col-md-6">
-            <div class="form-group">
-                {{ Form::label('user_id', 'Author:',array('class'=>'control-label')) }}
-                {{ Form::select('user_id', $author,NULL,array('class'=>'form-control')) }}
-            </div>
-        </div>
 
         <div class="col-md-6">
             <div class="form-group">

@@ -62,7 +62,13 @@ class AuthController extends BaseController {
 
         $this->service->updateLastLoggedAt();
 
-        return Redirect::intended('/');
+        if ( !(Entrust::hasRole('admin') || (Entrust::hasRole('moderator'))) ) // Checks the current user
+        {
+            return Redirect::intended('/');
+
+        }
+        return Redirect::action('AdminGalleriesController@index');
+
     }
 
 

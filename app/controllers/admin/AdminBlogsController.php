@@ -45,9 +45,9 @@ class AdminBlogsController extends AdminBaseController {
         $this->categoryRepository = $categoryRepository;
         $this->userRepository     = $userRepository;
         $this->photoRepository    = $photoRepository;
+        $this->tagRepository = $tagRepository;
         $this->beforeFilter('Admin');
         parent::__construct();
-        $this->tagRepository = $tagRepository;
     }
 
     /**

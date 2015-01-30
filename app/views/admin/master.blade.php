@@ -2,98 +2,58 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>{{ ! empty($title) ? $title . ' - ' : '' }} Kaizen Admin</title>
-
+    <title>{{ ! empty($title) ? $title . ' - ' : '' }} MGO Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     @section('style')
-
         {{ HTML::style('assets/css/bootstrap.min.css') }}
         {{ HTML::style('css/font-awesome.min.css') }}
-{{--        {{ HTML::style('assets/css/wysihtml5/prettify.css') }}--}}
-{{--        {{ HTML::style('assets/css/wysihtml5/bootstrap-wysihtml5.css') }}--}}
         {{ HTML::style('assets/css/datatables.css') }}
         {{ HTML::style('assets/css/custom.css') }}
-
-
         <style>
             .container-fluid {
-                padding:0 50px;
+                padding: 0 50px;
             }
         </style>
     @show
-
-
 </head>
 
 <body>
-<!-- Container -->
 <div class="container-fluid ">
-
     @include('admin.partials.navigation')
     @include('admin.partials.confirm')
-    <!-- ./ navbar -->
 
-    <!-- Notifications -->
     @include('admin.partials.notification')
-    <!-- ./ notifications -->
 
-    <!-- Content -->
     @section('content')
     @show
-    <!-- ./ content -->
 
-    <!-- Footer -->
     @include('admin.layouts.footer')
-    <!-- ./ Footer -->
-
-
 </div>
-<!-- ./ container -->
 
-    <!-- Javascript -->
-    @section('script')
-
-
+@section('script')
     {{ HTML::script('assets/js/jquery.min.js') }}
     {{ HTML::script('assets/js/bootstrap.min.js') }}
-    {{--{{ HTML::script('assets/js/wysihtml5/wysihtml5-0.3.0.js') }}--}}
-    {{--{{ HTML::script('assets/js/wysihtml5/bootstrap-wysihtml5.js') }}--}}
     {{ HTML::script('assets/js/nicEdit.js') }}
     {{ HTML::script('assets/js/datatables-bootstrap.js') }}
     {{ HTML::script('assets/js/datatables.js') }}
     {{ HTML::script('packages/tinymce/tinymce.min.js') }}
-
     <script type="text/javascript">
-//        $('.wysihtml5').wysihtml5();
-//        $('.wysihtml5').Editor();
-//        nicEditors.allTextAreas();
-
-//        $('button[name="remove"]').on('click', function(e){
-//            var $form=$(this).closest('form');
-//            e.preventDefault();
-//            $('#confirm').modal({ backdrop: 'static', keyboard: false })
-//                .one('click', '#delete', function (e) {
-//                    $form.trigger('submit');
-//                });
-//        });
-        $('.delete-btns').on('click', function(e){
-            var $form=$(this).closest('form');
-                e.preventDefault();
-                $('#confirm').modal({ backdrop: 'static', keyboard: false })
+        $('.delete-btns').on('click', function (e) {
+            var $form = $(this).closest('form');
+            e.preventDefault();
+            $('#confirm').modal({backdrop: 'static', keyboard: false})
                     .one('click', '#delete', function (e) {
                         $form.trigger('submit');
                     }
-                );
+            );
         });
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('.datatable').dataTable({
                 "sPaginationType": "bs_four_button",
-                "iDisplayLength" : 100
+                "iDisplayLength": 100
             });
-            $('.datatable').each(function(){
+            $('.datatable').each(function () {
                 var datatable = $(this);
-                // SEARCH - Add the placeholder for Search and Turn this into in-line form control
                 var search_input = datatable.closest('.dataTables_wrapper').find('div[id$=_filter] input');
                 search_input.attr('placeholder', 'Search');
                 search_input.addClass('form-control');
@@ -101,7 +61,6 @@
                 var length_sel = datatable.closest('.dataTables_wrapper').find('div[id$=_length] select');
                 length_sel.addClass('form-control input-sm');
             });
-//            nicEditors.allTextAreas();
             tinymce.init({
                 selector: "textarea",
                 plugins: [
@@ -110,15 +69,11 @@
                     "save table contextmenu directionality emoticons template paste textcolor jbimages directionality"
                 ],
                 toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image jbimages | print preview media fullpage | forecolor backcolor emoticons | ltr rtl",
-                relative_urls : false
+                relative_urls: false
 
             });
-
         });
     </script>
-
-    @show
-
+@show
 </body>
-
 </html>

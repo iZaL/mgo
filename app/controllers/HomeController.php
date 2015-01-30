@@ -28,9 +28,9 @@ class HomeController extends BaseController {
 
     public function index()
     {
-        $galleries = $this->galleryRepository->getImageSlider();
+        $gallery = $this->galleryRepository->getImageSlider();
         $ads    = $this->adRepository->getAds();
-        $this->render('site.home', compact('galleries', 'ads'));
+        $this->render('site.home', compact('gallery', 'ads'));
     }
 
     /**

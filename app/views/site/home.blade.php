@@ -76,8 +76,8 @@
         </div>
 
         <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 600px; height: 300px; overflow: hidden;">
-            @foreach($galleries as $gallery)
-                @if(count($gallery->photos))
+            {{--@foreach($galleries as $gallery)--}}
+                @if($gallery && count($gallery->photos))
                     <!-- Slides Container -->
                     @foreach($gallery->photos as $photo)
                         <div>
@@ -90,7 +90,7 @@
                         </div>
                     @endforeach
                 @endif
-            @endforeach
+            {{--@endforeach--}}
         </div>
         <!-- bullet navigator container -->
         <div u="navigator" class="jssorb05" style="position: absolute; bottom: 16px; right: 6px;">
