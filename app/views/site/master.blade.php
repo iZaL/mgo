@@ -33,7 +33,7 @@
 <div class="container">
     <!-- header -->
     <div class="row" id="header-section">
-        <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="col-md-4 col-sm-4 col-xs-12 pull-right">
             <a href="/">{{ HTML::image('images/Logo.png','kaizen',array('class'=>'img-responsive')) }}</a>
         </div>
 
@@ -48,12 +48,7 @@
             </div>
         </div>
 
-        <!-- show only in mobiles -->
-        <div class="visible-xs">
-            <div class="row">
-                @include('site.partials.login')
-            </div>
-        </div>
+
         <!-- End mobile Div -->
         <div class="row">
             <div class="col-md-12">
