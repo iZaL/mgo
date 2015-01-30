@@ -54,6 +54,8 @@ class CommentsController extends BaseController {
             return Redirect::action('EventsController@show', $id)->with('success', trans('word.comment_posted'));
         } elseif ( $commentable_type == 'Product' ) {
             return Redirect::action('ProductsController@show', $id)->with('success', trans('word.comment_posted'));
+        } elseif ( $commentable_type == 'Gallery' ) {
+            return Redirect::action('GalleriesController@show', $id)->with('success', trans('word.comment_posted'));
         } else {
             return Redirect::action('BlogsController@show', $id)->with('success', trans('word.comment_posted'));
 
