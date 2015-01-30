@@ -1,4 +1,4 @@
-@extends('site.layouts._one_column')
+@extends('site.layouts._two_column')
 
 @section('content')
 
@@ -47,7 +47,7 @@
             </div>
 
             <div class="form-group">
-                {{ Form::text('mobile',NULL,array('id'=> 'mobile','class'=>'form-control input-lg','placeholder'=> trans('word.mobile'), 'style'=>'float: none; min-width:450px; min-height: 45px; border-radius: 10px; text-indent: 25px;')) }}
+                {{ Form::text('mobile',NULL,array('id'=> 'mobile','class'=>'form-control input-lg','placeholder'=> trans('word.mobile'))) }}
             </div>
 
             <div class="form-group">
@@ -62,8 +62,5 @@
 @stop
 @section('script')
 @parent
-    {{ HTML::script('js/intlTelInput.min.js'); }}
-    <script>
-      $("#mobile").intlTelInput();
-    </script>
+
 @stop

@@ -19,8 +19,8 @@ class AdminUpdateValidator extends BaseValidator {
         'active' => 'boolean',
         'email'    => 'email|unique:users,email,:id',
         'password' => 'sometimes|alpha_num|between:6,12|confirmed',
-        'name_ar'  => 'sometimes',
-        'name_en'  => 'sometimes',
+        'name_ar'  => 'min:3',
+        'name_en'  => 'min:3',
     );
 
     public function __construct($id)
