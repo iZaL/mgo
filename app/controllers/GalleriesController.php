@@ -54,7 +54,7 @@ class GalleriesController extends BaseController {
      */
     public function show($id)
     {
-        $album = $this->galleryRepository->findById($id, ['photos', 'category','comments']);
+        $album = $this->galleryRepository->getById($id, ['photos', 'category','comments']);
         $this->render('site.galleries.view', compact('album'));
     }
 

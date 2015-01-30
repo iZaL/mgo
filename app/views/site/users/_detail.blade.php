@@ -27,12 +27,4 @@
          <td>{{ trans('word.gender') }} : </td>
          <td>{{ $user->gender ? trans('word.'.strtolower($user->gender)): trans('word.not_available') }}</td>
      </tr>
-     <tr>
-         <td>{{ trans('word.instagram') }} : </td>
-         <td>{{ $user->instagram ? $user->instagram: trans('word.not_available') }}</td>
-     </tr>
-     <tr>
-         <td>{{ trans('word.twitter') }} : </td>
-         <td>{{ $user->twitter ? $user->twitter: trans('word.not_available') }}</td>
-     </tr>
  </table>

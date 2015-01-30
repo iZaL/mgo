@@ -28,17 +28,19 @@
     <div class="col-md-12">
         <div id="gallery-1" class="royalSlider rsDefault">
             <?php $i = 0; ?>
-            @foreach($album->photos as $photo)
-                <div class="rsContent">
-                    @if($i==0)
-                        <a class="rsImg bugaga" data-rsbigimg="{{  asset('uploads/large/'.$photo->name) }}" href="{{  asset('uploads/large/'.$photo->name) }}">{{ $photo->title }}</a>
-                    @else
-                        <a class="rsImg" data-rsbigimg="{{  asset('uploads/large/'.$photo->name) }}" href="{{  asset('uploads/large/'.$photo->name) }}">{{ $photo->title }}</a>
-                    @endif
-                    {{ HTML::image('uploads/thumbnail/'.$photo->name.'',$photo->name,array('class'=>'rsTmb','width'=> '96', 'height'=>'72')) }}
-                    <?php $i ++; ?>
-                </div>
-            @endforeach
+            @if(count($album->photos))
+                @foreach($album->photos as $photo)
+                    <div class="rsContent">
+                        @if($i==0)
+                            <a class="rsImg bugaga" data-rsbigimg="{{  asset('uploads/large/'.$photo->name) }}" href="{{  asset('uploads/large/'.$photo->name) }}">{{ $photo->title }}</a>
+                        @else
+                            <a class="rsImg" data-rsbigimg="{{  asset('uploads/large/'.$photo->name) }}" href="{{  asset('uploads/large/'.$photo->name) }}">{{ $photo->title }}</a>
+                        @endif
+                        {{ HTML::image('uploads/thumbnail/'.$photo->name.'',$photo->name,array('class'=>'rsTmb','width'=> '96', 'height'=>'72')) }}
+                        <?php $i ++; ?>
+                    </div>
+                @endforeach
+            @endif
         </div>
     </div>
 

@@ -48,7 +48,6 @@
             </td>
             <td>{{ $user->active == 1 ? 'true':'false' }}</td>
             <td>
-
                 <a href="{{  URL::action('AdminUsersController@printDetail',$user->id ) }}" class=" btn btn-xs btn-default"><i class="glyphicon glyphicon-print"></i> Print</a>
                 <a href="{{  URL::action('AdminUsersController@edit',$user->id ) }}" class=" btn btn-xs btn-default">Edit</a>
                 {{ Form::open(array('method' => 'DELETE', 'action' => array('AdminUsersController@destroy', $user->id))) }}

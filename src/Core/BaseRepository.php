@@ -95,10 +95,10 @@ abstract class BaseRepository {
         if ( isset($with) && (! empty($with)) ) {
             if ( ! is_array($with) ) throw new InvalidArgumentException;
 
-            return $this->model->with($with)->find($id);
+            return $this->model->with($with)->findOrFail($id);
         }
 
-        return $this->model->find($id);
+        return $this->model->findOrFail($id);
     }
 
     /**
