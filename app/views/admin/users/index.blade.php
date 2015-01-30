@@ -38,7 +38,7 @@
             <td>{{ $user->name_en }}</td>
             <td>{{ $user->email }}</td>
             <td>{{ $user->mobile }}</td>
-            <td>{{ $user->country ? $user->country->name : '-' }}</td>
+            <td>{{ $user->country ? $user->country  : '-' }}</td>
             <td>
                 <?php $roles=[]; ?>
                 @foreach ( $user->roles as $role )

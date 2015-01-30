@@ -21,7 +21,7 @@
      </tr>
      <tr>
          <td>{{ trans('word.country') }} : </td>
-         <td>{{ $user->country ? $user->country->name: trans('word.not_available') }}</td>
+         <td>{{ $user->country ? $user->country : trans('word.not_available') }}</td>
      </tr>
      <tr>
          <td>{{ trans('word.gender') }} : </td>
