@@ -3,9 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>{{ ! empty($title) ? $title . ' - ' : '' }}</title>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     @section('style')
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
@@ -23,12 +21,10 @@
         @if ( App::getLocale() == 'ar')
             {{ HTML::style('css/bootstrap-rtl.min.css') }}
         @endif
-
         {{ HTML::style('css/custom.css') }}
-
     @show
-
 </head>
+
 <body>
 <div class="container">
     <!-- header -->
@@ -36,8 +32,8 @@
         <div class="col-md-4 col-sm-4 col-xs-12 pull-right">
             <a href="/">{{ HTML::image('images/Logo.png','kaizen',array('class'=>'img-responsive')) }}</a>
         </div>
-
     </div>
+
     <div class="row">
         <div class="row">
             <div class="col-md-11">
@@ -47,7 +43,6 @@
                 @include('site.partials.locale')
             </div>
         </div>
-
 
         <!-- End mobile Div -->
         <div class="row">
@@ -59,16 +54,16 @@
         <div class="row">
             {{ $content }}
         </div>
+
         <div class="row">
             @include('site.partials.footer')
         </div>
     </div>
+
 </div>
-<!--end of container-->
 
 <!-- Javascript -->
 @section('script')
-
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>

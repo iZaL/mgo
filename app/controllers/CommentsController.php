@@ -31,10 +31,9 @@ class CommentsController extends BaseController {
     /**
      * Store a newly created resource in storage.
      *
-     * @param $id
      * @return Response
      */
-    public function store($id)
+    public function store()
     {
         $commentable_id = Input::get('commentable_id');
 
@@ -50,15 +49,6 @@ class CommentsController extends BaseController {
             return Redirect::back()->with('errors', $this->commentRepository->errors())->withInput();
         }
 
-        if ( $commentable_type == 'EventModel' ) {
-            return Redirect::action('EventsController@show', $id)->with('success', trans('word.comment_posted'));
-        } elseif ( $commentable_type == 'Product' ) {
-            return Redirect::action('ProductsController@show', $id)->with('success', trans('word.comment_posted'));
-        } elseif ( $commentable_type == 'Gallery' ) {
-            return Redirect::action('GalleriesController@show', $id)->with('success', trans('word.comment_posted'));
-        } else {
-            return Redirect::action('BlogsController@show', $id)->with('success', trans('word.comment_posted'));
-
-        }
+        return Redirect::back()->with('success', trans('word.comment_posted'));
     }
 }

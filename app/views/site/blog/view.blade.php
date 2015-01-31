@@ -9,9 +9,9 @@
             @if ( App::getLocale() == 'en')
                 pull-right
             @else
-                    pull-left
-                @endif
-                    " style=" padding: 5px; margin:0px; margin-bottom: 5px;">
+                pull-left
+            @endif
+            " style=" padding: 5px; margin:0px; margin-bottom: 5px;">
             Posted {{ $post->created_at }}
             </span>
         </div>
@@ -40,7 +40,6 @@
             </div>
         @endif
     </div>
-
 
     <div class="col-md-12">
         @if(count($post->comments))

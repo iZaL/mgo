@@ -21,38 +21,38 @@
                 case 'favorite':
                     var ttip = '{{ trans('word.cancel ') }}'
                     $('.favorite_btn')
-                        .attr('title', ttip)
-                        .tooltip('fixTitle');
+                            .attr('title', ttip)
+                            .tooltip('fixTitle');
                     break;
                 case 'unfavorite':
                     var ttip = '{{ trans('general.favorite') }}'
                     $('.favorite_btn')
-                        .attr('title', ttip)
-                        .tooltip('fixTitle');
+                            .attr('title', ttip)
+                            .tooltip('fixTitle');
                     break;
                 case 'follow':
                     var ttip = '{{ trans('word.cancel') }}'
                     $('.follow_btn')
-                        .attr('title', ttip)
-                        .tooltip('fixTitle');
+                            .attr('title', ttip)
+                            .tooltip('fixTitle');
                     break;
                 case 'unfollow':
                     var ttip = '{{ trans('general.follow') }}'
                     $('.follow_btn')
-                        .attr('title', ttip)
-                        .tooltip('fixTitle');
+                            .attr('title', ttip)
+                            .tooltip('fixTitle');
                     break;
                 case 'subscribe':
                     var ttip = '{{ trans('word.unsubscribe') }}'
                     $('.subscribe_btn')
-                        .attr('title', ttip)
-                        .tooltip('fixTitle');
+                            .attr('title', ttip)
+                            .tooltip('fixTitle');
                     break;
                 case 'unsubscribe':
                     var ttip = '{{ trans('word.subscribe') }}'
                     $('.subsribe_btn')
-                        .attr('title', ttip)
-                        .tooltip('fixTitle');
+                            .attr('title', ttip)
+                            .tooltip('fixTitle');
                     break;
                 default:
             }
@@ -81,11 +81,11 @@
             }
             google.maps.event.addDomListener(window, 'load', initialize);
         </script>
-    @endif
+        @endif
 
-@stop
+        @stop
 
-<!-- Content Section -->
+                <!-- Content Section -->
 @section('content')
     @parent
 
@@ -107,61 +107,61 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
 
                     @if( !$subscribed)
-                            <a href="{{  URL::action('EventsController@showSubscriptionOptions', array('id'=>$event->id)) }}"/>
-                            <button type="submit" class=" col-md-12 col-sm-12 col-xs-12 events_btns btn btn-default btn-sm subscribe_btn bg-blue "
+                        <a href="{{  URL::action('EventsController@showSubscriptionOptions', array('id'=>$event->id)) }}"/>
+                        <button type="submit" class=" col-md-12 col-sm-12 col-xs-12 events_btns btn btn-default btn-sm subscribe_btn bg-blue "
                                 data-toggle="tooltip" data-placement="top" title="{{  trans('word.subscribe')  }}">
-                                <i class="subscribe glyphicon glyphicon-check "></i>  </br>
+                            <i class="subscribe glyphicon glyphicon-check "></i>  </br>
                                 <span class="buttonText">
                                 {{ trans('word.subscribe')  }}
                                 </span>
-                            </button>
+                        </button>
                         </a>
                     @else
                         {{-- If Subscribed --}}
                         @if($canWatchOnline)
                             {{-- If Can Watch Online --}}
                             <a href="{{  URL::action('EventsController@streamEvent', array('id'=>$event->id)) }}"/>
-                                <button type="submit" class=" col-md-12 col-sm-12 col-xs-12 events_btns btn btn-default btn-sm subscribe_btn bg-green "
-                                     data-toggle="tooltip" data-placement="top" title="{{ trans('word.online')  }}">
-                                    <i class="subscribe glyphicon glyphicon-check"></i>  </br>
+                            <button type="submit" class=" col-md-12 col-sm-12 col-xs-12 events_btns btn btn-default btn-sm subscribe_btn bg-green "
+                                    data-toggle="tooltip" data-placement="top" title="{{ trans('word.online')  }}">
+                                <i class="subscribe glyphicon glyphicon-check"></i>  </br>
                                     <span class="buttonText">
                                        {{ trans('word.online')  }}
                                     </span>
-                                </button>
+                            </button>
                             </a>
-                        {{-- If Event has expired --}}
+                            {{-- If Event has expired --}}
                         @elseif($eventExpired)
                             {{ Form::open(['class' => 'form', 'method' => 'post', 'action' => ['EventsController@reorganizeEvents', $event->id]]) }}
-                                <button type="submit" class=" col-md-12 col-sm-12 col-xs-12 events_btns btn btn-default btn-sm subscribe_btn bg-blue "
+                            <button type="submit" class=" col-md-12 col-sm-12 col-xs-12 events_btns btn btn-default btn-sm subscribe_btn bg-blue "
                                     data-toggle="tooltip" data-placement="top" title="{{ trans('word.request_reorganize_events')  }}">
-                                    <i class="subscribe glyphicon glyphicon-check"></i>  </br>
+                                <i class="subscribe glyphicon glyphicon-check"></i>  </br>
                                     <span class="buttonText">
                                        {{ trans('word.request_reorganize_events')  }}
                                     </span>
-                                </button>
+                            </button>
                             {{ Form::close() }}
                         @else
                             <a href="{{  URL::action('SubscriptionsController@unsubscribe', array('id'=>$event->id)) }}"/>
-                                <button type="submit" class=" col-md-12 col-sm-12 col-xs-12 events_btns btn btn-default btn-sm subscribe_btn bg-blue "
+                            <button type="submit" class=" col-md-12 col-sm-12 col-xs-12 events_btns btn btn-default btn-sm subscribe_btn bg-blue "
                                     data-toggle="tooltip" data-placement="top" title="{{ trans('word.unsubscribe')  }}">
-                                    <i class="subscribe glyphicon glyphicon-check active "></i>  </br>
+                                <i class="subscribe glyphicon glyphicon-check active "></i>  </br>
                                     <span class="buttonText">
                                         {{  trans('word.unsubscribe')  }}
                                     </span>
-                                </button>
+                            </button>
                             </a>
                         @endif
 
                     @endif
                     {{--  Show Favorite, Subscription Buttons--}}
                     <button type="button" class="col-md-6 col-sm-6 col-xs-6 events_btns btn btn-default btn-sm follow_btn bg-blue top5"
-                        data-toggle="tooltip" data-placement="top" title="{{ $followed? trans('word.cancel') : trans('general.follow') }}">
+                            data-toggle="tooltip" data-placement="top" title="{{ $followed? trans('word.cancel') : trans('general.follow') }}">
                         <i class="follow glyphicon glyphicon-heart {{ $followed? 'active' :'' ;}}"></i> </br>
                         {{ trans('word.followings')}}
                     </button>
 
                     <button type="button" class="col-md-6 col-sm-6 col-xs-6 events_btns btn btn-default btn-sm favorite_btn bg-blue top5"
-                        data-toggle="tooltip" data-placement="top" title="{{ $favorited? trans('word.cancel') : trans('general.favorite') }}">
+                            data-toggle="tooltip" data-placement="top" title="{{ $favorited? trans('word.cancel') : trans('general.favorite') }}">
                         <i class="favorite glyphicon glyphicon-star {{ $favorited? 'active' :'' ;}}"></i></br>
                         {{ trans('word.favorites') }}
                     </button>
@@ -197,9 +197,9 @@
 
                 @if($event->location)
                     <tr>
-                        <td> <b>{{ trans('word.country') }} </b></td>
+                        <td><b>{{ trans('word.country') }} </b></td>
                         <td> {{ $event->location->country ? $event->location->country->name : '' }} </td>
-                        <td> <b>{{ trans('word.location') }}</b></td>
+                        <td><b>{{ trans('word.location') }}</b></td>
                         <td> {{ $event->location->name }} </td>
                     </tr>
                 @endif
@@ -275,13 +275,13 @@
 
             @if( !$subscribed)
                 <a href="{{  URL::action('EventsController@showSubscriptionOptions', array('id'=>$event->id)) }}"/>
-                    <button type="submit" class="col-md-12 col-sm-12 col-xs-12 btn btn-default btn-sm subscribe_btn "
+                <button type="submit" class="col-md-12 col-sm-12 col-xs-12 btn btn-default btn-sm subscribe_btn "
                         data-toggle="tooltip" data-placement="top" title="{{  trans('word.subscribe')  }}">
-                        <i class="subscribe glyphicon glyphicon-check "></i>  </br>
+                    <i class="subscribe glyphicon glyphicon-check "></i>  </br>
                         <span class="buttonText">
                         {{ trans('word.subscribe')  }}
                         </span>
-                    </button>
+                </button>
                 </a>
             @else
                 {{-- If Subscribed --}}
@@ -289,35 +289,35 @@
                 @if($canWatchOnline)
                     {{-- If Can Watch Online --}}
                     <a href="{{  URL::action('EventsController@streamEvent', array('id'=>$event->id)) }}"/>
-                        <button type="submit" class="col-md-12 col-sm-12 col-xs-12 btn btn-default btn-sm subscribe_btn "
-                             data-toggle="tooltip" data-placement="top" title="{{ trans('general.enter_event_room')  }}">
-                            <i class="subscribe glyphicon glyphicon-check"></i>  </br>
+                    <button type="submit" class="col-md-12 col-sm-12 col-xs-12 btn btn-default btn-sm subscribe_btn "
+                            data-toggle="tooltip" data-placement="top" title="{{ trans('general.enter_event_room')  }}">
+                        <i class="subscribe glyphicon glyphicon-check"></i>  </br>
                             <span class="buttonText">
                                {{ trans('word.enter_event_room')  }}
                             </span>
-                        </button>
+                    </button>
                     </a>
                 @elseif($eventExpired)
                     {{-- If Event is Expired--}}
 
                     {{ Form::open(['class' => 'form', 'method' => 'post', 'action' => ['EventsController@reorganizeEvents', $event->id]]) }}
-                        <button type="submit" class="col-md-12 col-sm-12 col-xs-12 btn btn-default btn-sm subscribe_btn "
+                    <button type="submit" class="col-md-12 col-sm-12 col-xs-12 btn btn-default btn-sm subscribe_btn "
                             data-toggle="tooltip" data-placement="top" title="{{ trans('word.request_reorganize_events')  }}">
-                            <i class="subscribe glyphicon glyphicon-check"></i>  </br>
+                        <i class="subscribe glyphicon glyphicon-check"></i>  </br>
                             <span class="buttonText">
                                {{ trans('word.request_reorganize_events')  }}
                             </span>
-                        </button>
+                    </button>
                     {{ Form::close() }}
                 @else
                     <a href="{{  URL::action('SubscriptionsController@unsubscribe', array('id'=>$event->id)) }}"/>
-                        <button type="submit" class="col-md-12 col-sm-12 col-xs-12 btn btn-default btn-sm subscribe_btn "
+                    <button type="submit" class="col-md-12 col-sm-12 col-xs-12 btn btn-default btn-sm subscribe_btn "
                             data-toggle="tooltip" data-placement="top" title="{{ $subscribed? trans('word.unsubscribe') : trans('word.subscribe')  }}">
-                            <i class="subscribe glyphicon glyphicon-check {{ $subscribed? 'active' :'' ;}}"></i>  </br>
+                        <i class="subscribe glyphicon glyphicon-check {{ $subscribed? 'active' :'' ;}}"></i>  </br>
                             <span class="buttonText">
                                 {{ $subscribed? trans('word.unsubscribe') : trans('word.subscribe')  }}
                             </span>
-                        </button>
+                    </button>
                     </a>
 
                 @endif
@@ -335,14 +335,15 @@
                 @foreach($event->comments as $comment)
                     <div class="comments_dev">
                         <p>{{ $comment->content }}</p>
+
                         <p
                         @if ( App::getLocale() == 'en')
                             class="text-left text-primary"
-                        @else
+                            @else
                             class="text-right text-primary"
-                        @endif
-                        >{{ $comment->user ?  $comment->user->username : ''}}
-                        <span class="text-muted"> - {{ $comment->created_at }} </span></p>
+                                @endif
+                                >{{ $comment->user ?  $comment->user->username : ''}}
+                            <span class="text-muted"> - {{ $comment->created_at }} </span></p>
                     </div>
                 @endforeach
             @endif
@@ -350,13 +351,13 @@
         <div class="col-md-12">
             @if(Auth::User())
                 {{ Form::open(array( 'action' => array('CommentsController@store', $event->id))) }}
-                    {{ Form::hidden('commentable_id',$event->id)}}
-                    {{ Form::hidden('commentable_type','EventModel')}}
-                    <div class="form-group">
-                        <label for="comment"></label>
-                        <textarea type="text" class="form-control" id="content" name="content" placeholder="{{ trans('word.comment')}}"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-default"> {{ trans('word.add_comment') }}</button>
+                {{ Form::hidden('commentable_id',$event->id)}}
+                {{ Form::hidden('commentable_type','EventModel')}}
+                <div class="form-group">
+                    <label for="comment"></label>
+                    <textarea type="text" class="form-control" id="content" name="content" placeholder="{{ trans('word.comment')}}"></textarea>
+                </div>
+                <button type="submit" class="btn btn-default"> {{ trans('word.add_comment') }}</button>
                 {{ Form::close() }}
             @endif
         </div>

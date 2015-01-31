@@ -4,7 +4,8 @@
         <ul>
             @if($expiredEvents)
                 @foreach($expiredEvents as $event)
-                    <li class="unstyled"><i class="glyphicon glyphicon-calendar"></i> <a href="{{URL::action('EventsController@show',$event->id)}}"> {{ $event->title }}</a></li>
+                    <li class="unstyled"><i class="glyphicon glyphicon-calendar"></i>
+                        <a href="{{URL::action('EventsController@show',$event->id)}}"> {{ $event->title }}</a></li>
                 @endforeach
                 <hr>
                 <a href="{{action('EventsController@index',['past'=>'true'])}}">{{ trans('word.view_all_expired_events') }}</a>

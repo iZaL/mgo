@@ -22,7 +22,7 @@
         <button type="button" class="close" data-dismiss="alert">&times;</button>
         @if(is_array($message))
             @foreach ($message as $m)
-            <li>{{ $m }}</li>
+                <li>{{ $m }}</li>
             @endforeach
         @else
             {{ $message }}

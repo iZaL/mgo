@@ -4,7 +4,9 @@
         <ul>
             @if($tags)
                 @foreach($tags as $tag)
-                    <li class="unstyled"><i class="glyphicon glyphicon-tag"></i><a href="{{action('TagsController@getBlogs',$tag->id)}}"> {{ $tag->name }}</a></li>
+                    <li class="unstyled">
+                        <i class="glyphicon glyphicon-tag"></i><a href="{{action('TagsController@getBlogs',$tag->id)}}"> {{ $tag->name }}</a>
+                    </li>
                 @endforeach
             @endif
         </ul>

@@ -4,7 +4,9 @@
         <ul>
             @if($eventCategories)
                 @foreach($eventCategories as $eventCategory)
-                    <li class="unstyled"><i class="fa fa-book"></i><a href="{{action('CategoriesController@getEvents',$eventCategory->id)}}"> {{ $eventCategory->name }}</a></li>
+                    <li class="unstyled">
+                        <i class="fa fa-book"></i><a href="{{action('CategoriesController@getEvents',$eventCategory->id)}}"> {{ $eventCategory->name }}</a>
+                    </li>
                 @endforeach
             @endif
         </ul>

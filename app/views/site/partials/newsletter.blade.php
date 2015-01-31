@@ -8,13 +8,15 @@
                 <div class="form-group">
                     {{ Form::open(array('action'=>'NewslettersController@subscribe')) }}
                     <div class="input-group">
-                            <span class="input-group-addon">
-                                <i class="fa fa-envelope"></i>
-                            </span>
-                        {{Form::input('email','email',NULL,array('class'=>'form-control','placeholder'=>trans('word.email') ,'required'=>'"required"'))}}
-                            <span class="input-group-btn">
-                                <button id="submit" class="btn btn-primary" type="submit"><i class="fa fa-arrow-left fa-fw"></i> </button>
-                            </span>
+                        <span class="input-group-addon">
+                            <i class="fa fa-envelope"></i>
+                        </span>
+                        {{Form::input('email','email',null,array('class'=>'form-control','placeholder'=>trans('word.email') ,'required'=>'"required"'))}}
+                        <span class="input-group-btn">
+                            <button id="submit" class="btn btn-primary" type="submit">
+                                <i class="fa fa-arrow-left fa-fw"></i>
+                            </button>
+                        </span>
                     </div>
                     {{Form::close()}}
                 </div>

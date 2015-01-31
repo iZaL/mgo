@@ -86,8 +86,6 @@ Route::get('tag/{id}/blog', 'TagsController@getBlogs' );
 
 Route::resource('tag', 'TagsController', array('only' => array('show')));
 
-// Post Comment
-
 /*********************************************************************************************************
  * Auth Routes
  ********************************************************************************************************/
@@ -113,7 +111,6 @@ Route::get('account/activate/{token}', ['as' => 'user.token.confirm', 'uses' => 
 
 Route::post('account/send-activation-link', ['as' => 'user.token.send-activation', 'uses' => 'AuthController@sendActivationLink']);
 
-
 /*********************************************************************************************************
  * User Routes
  ********************************************************************************************************/
@@ -133,7 +130,6 @@ Route::get('category/{id}/blog', array('as' => 'CategoryPosts', 'uses' => 'Categ
  ********************************************************************************************************/
 Route::post('newsletter/subscribe', 'NewslettersController@subscribe');
 
-
 /*********************************************************************************************************
  * Gallery Routes
  ********************************************************************************************************/
@@ -141,11 +137,10 @@ Route::resource('gallery', 'GalleriesController' );
 
 Route::get('gallery/{id}/album', ['as'=>'album','uses'=>'GalleriesController@showAlbum']);
 
-
-
 /*********************************************************************************************************
  * MISC ROUTES
  ********************************************************************************************************/
+Route::get('country/{country}', 'LocaleController@setCountry');
 
 Route::get('language/{lang}',
     array(
@@ -157,8 +152,6 @@ Route::get('language/{lang}',
 Route::get('forbidden', function () {
     return View::make('error.forbidden');
 });
-
-Route::get('country/{country}', 'LocaleController@setCountry');
 
 Route::get('/', array('as' => 'home', 'uses' => 'HomeController@index'));
 
@@ -360,8 +353,6 @@ Route::group(array('prefix' => 'admin', 'before' => array('Auth', 'Moderator')),
 Route::post('queue/iron', function () {
     return Queue::marshal();
 });
-
-
 
 /*********************************************************************************************************
  * Test Routes

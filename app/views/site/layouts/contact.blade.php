@@ -3,24 +3,24 @@
 @section('content')
 
     <div class="row">
-    <div class="col-md-1"></div>
-       <div class="col-md-10">
-           <address>
-               <h2 style="background-color: rgba(221, 220, 219, 0.83); padding:10px;">Contact Us</h2>
-               @if($contact)
-               <b>{{ trans('word.email')  }}</b> : {{ $contact->email }}</br>
-               <b>{{ trans('word.address')}}</b> : {{ $contact->address_en }}</br>
-               <b>{{ trans('word.phone')  }}</b> : {{ $contact->phone }} </br>
-               <b>{{ trans('word.mobile') }}</b> : {{ $contact->mobile }} </br>
-               @endif
-           </address>
-       </div>
-       <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <address>
+                <h2 style="background-color: rgba(221, 220, 219, 0.83); padding:10px;">Contact Us</h2>
+                @if($contact)
+                    <b>{{ trans('word.email')  }}</b> : {{ $contact->email }}<br>
+                    <b>{{ trans('word.address')}}</b> : {{ $contact->address_en }}<br>
+                    <b>{{ trans('word.phone')  }}</b> : {{ $contact->phone }} <br>
+                    <b>{{ trans('word.mobile') }}</b> : {{ $contact->mobile }} <br>
+                @endif
+            </address>
+        </div>
+        <div class="col-md-1"></div>
     </div>
 
 
     <div class="row">
-    <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
         <div class="col-md-10">
             {{ Form::open(array('method' => 'POST', 'action' => array('ContactsController@contact'), 'role'=>'form')) }}
 

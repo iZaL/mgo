@@ -5,7 +5,8 @@
             <ul>
                 @if($latest_event_posts)
                     @foreach($latest_event_posts as $event)
-                        <li class="unstyled"><i class="fa fa-bullhorn"></i> <a href="{{URL::action('EventsController@show',$event->id)}}"> {{ $event->title }}</a></li>
+                        <li class="unstyled"><i class="fa fa-bullhorn"></i>
+                            <a href="{{URL::action('EventsController@show',$event->id)}}"> {{ $event->title }}</a></li>
                     @endforeach
                 @endif
             </ul>
