@@ -13,7 +13,7 @@ return [
 
     'login'                => [
         'title'           => 'Login',
-        'desc'            => 'أدخل بياناتك',
+        'desc'            => 'Fill up your information',
         'forgot_password' => 'Forgot Password',
         'remember'        => 'remember؟',
         'submit'          => 'Login',
@@ -26,23 +26,23 @@ return [
     ],
 
     'alerts'               => [
-        'account_created'              => 'تم تسجيل حسابك بنجاح. الرجاء التحقق من إيميلك لوجود توجيهات لكيفية تأكيد حسابك',
+        'account_created'              => 'Your account has been created. check your email for confirmation',
         'too_many_attempts'            => 'محاولات خاطئة كثيرة، الرجاء المحاولة بعد عدة دقائق',
         'wrong_credentials'            => 'Wrong username or Password',
-        'not_confirmed'                => 'يبدو ان حسابك غير منشط، راجع ايميلك لوجود رسالة تأكيد.',
-        'confirmation'                 => 'تم تنشيط حسابك الان! يمكنك الان تسجيل الدخول بنجاح',
-        'wrong_confirmation'           => 'كود تنشيط خاطئ',
-        'password_forgot'              => 'بيانات استعادة كلمة مرورك تم ارسالها إلى ايميلك',
-        'invalid_user'                 => 'لم يتم العثور على المستخدم',
-        'password_resetted'            => 'تم تغيير كلمة مرورك بنجاح',
-        'wrong_password_reset'         => 'كلمة مرور خاطئة، الرجاء معاودة المحاولة',
-        'wrong_token'                  => 'تعرفة استعادة كلمة المرور غير صحيحة ، الرجاء المحاولة مره أخرى.',
+        'not_confirmed'                => 'Your account has not been confirmed. check your email for confirmation mail',
+        'confirmation'                 => 'Your Account has been confirmed. You can login now',
+        'wrong_confirmation'           => 'Confirmation code is invalid',
+        'password_forgot'              => 'Password reset information has been emailed to you',
+        'invalid_user'                 => 'Invalid User',
+        'password_resetted'            => 'Your Password has been resetted',
+        'wrong_password_reset'         => 'Wrong password, please try again',
+        'wrong_token'                  => 'Invalid Token.',
         'duplicated_credentials'       => 'البيانات المستخدمة موجودة مسبقاً ، الرجاء استخدام بيانات أخرى',
-        'must_login'                   => 'عليك أن تكون مسجلا قبل دخول لهذه الصفحة',
-        'account_activated'            => 'حسابك قد تم تفعيله ، الرجاء تسجيل الدخول',
-        'reminders_sent'               => 'لتفعيل حسابك ، يرجى اتباع الخطوات التي قمنا أرسلت في البريد الإلكتروني الخاص ,بك',
-        'account_activation_link_sent' => 'الرجاء التحقق من إيميلك لوجود توجيهات لكيفية تأكيد حسابك',
-        'resent_activation_link'       => 'اضغظ هنا لإعادة إرسال رابط التفعيل',
+        'must_login'                   => 'You must login before this action',
+        'account_activated'            => 'Your account has been activated. please try to login now',
+        'reminders_sent'               => 'To activate your account, please follow the steps we have sent in your email',
+        'account_activation_link_sent' => 'Check your email for process to activate your account',
+        'resent_activation_link'       => 'Click here to resend activation link',
         'account_already_active'       => 'Your account is already active',
         'token_link_expired'           => 'Token Link Expired',
         'user_registration_failed'     => 'User Registration Failed'
@@ -51,25 +51,25 @@ return [
     ],
 
     'account_confirmation' => [
-        'subject'   => 'لتفعيل حسابك في كايزن',
-        'greetings' => 'مرحبا :name',
-        'body'      => 'الرجاء الدخول على الرابط التالي  لتأكيد حسابك ',
-        'farewell'  => 'نشكرك لتسجيلك معنا',
+        'subject'   => 'TO activate your account',
+        'greetings' => 'Welcome :name',
+        'body'      => 'Click this link to activate your account',
+        'farewell'  => 'Thanks For Registering with us',
 
     ],
 
     'account_activated'    =>
         [
-            'body'                => 'لقد تم إنشاء حسابك في موقع كايزن مع البريد الإلكتروني',
-            'click_here_to_login' => 'يمكنك تسجيل الدخول الآن مع هذا الرابط'
+            'body'                => 'Your account has been activated ',
+            'click_here_to_login' => 'Click here to login'
         ],
 
     'reset'                => [
-        'title'     => 'إستعادة كلمة المرور',
-        'heading'   => 'إستعادة كلمة المرور',
-        'greetings' => 'مرحباً :name',
-        'body'      => 'الرجاء اتباع الرابط التالي لكي تستعيد كلمة مرورك.',
-        'farewell'  => 'شكراً لتواصلك معنا',
+        'title'     => 'Retrieve your password',
+        'heading'   => 'Retrieve your password',
+        'greetings' => 'Welcome :name',
+        'body'      => 'Follow these steps to reset your password',
+        'farewell'  => 'Thanks for Registering with us',
     ],
 
 ];
