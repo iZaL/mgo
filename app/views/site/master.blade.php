@@ -18,7 +18,8 @@
         </style>
         {{ HTML::style('css/bootstrap.min.css') }}
         {{ HTML::style('css/font-awesome.min.css') }}
-        @if ( App::getLocale() == 'ar')
+        {{ HTML::style('css/intlTelInput.css'); }}
+    @if ( App::getLocale() == 'ar')
             {{ HTML::style('css/bootstrap-rtl.min.css') }}
         @endif
         {{ HTML::style('css/custom.css') }}
@@ -30,10 +31,19 @@
     <!-- header -->
     <div class="row" >
         <div class="col-md-4 col-sm-4 col-xs-12 pull-right">
-            <a href="/">{{ HTML::image('images/logo.jpeg','kaizen',array('class'=>'img-responsive')) }}</a>
+            <a href="/">{{ HTML::image('images/logo.png','kaizen',array('class'=>'img-responsive')) }}</a>
         </div>
-        <div class="col-md-8 slogan pull-left" >
-            Product Change the World
+
+
+        <div class="col-md-6 pull-left" >
+            <div class="row">
+                <div class="col-md-12 locale">
+                    @include('site.partials.locale')
+                </div>
+                <div class="col-md-12 slogan">
+                    {{ HTML::image('images/slogan.png','kaizen',array('class'=>'img-responsive')) }}
+                </div>
+            </div>
         </div>
     </div>
 
@@ -42,9 +52,7 @@
             <div class="col-md-11">
                 @include('site.partials.navigation')
             </div>
-            <div class="col-md-1">
-                @include('site.partials.locale')
-            </div>
+
         </div>
 
         <!-- End mobile Div -->

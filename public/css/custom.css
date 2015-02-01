@@ -77,7 +77,7 @@ a:hover{
     position: relative;
     background-color: transparent !important;
     border-color: none !important;
-    background-image: url("../images/Menu01.png");
+    background-image: url("../images/menu-bg.png");
     background-size: 100%;
     background-position: right;
     background-repeat: no-repeat;
@@ -732,8 +732,14 @@ span.tag:after {
 }
 
 .slogan {
-    font-size:21px;
     padding-top: 10% ;
     text-align: left;
     font-family: helvetica, arial, sans-serif;
+}
+
+.locale {
+    display: block;
+    font-size:16px;
+    text-align: left;
+    padding-top: 10px;
 }
