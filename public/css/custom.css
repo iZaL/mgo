@@ -20,9 +20,6 @@ html {
     background-repeat: no-repeat;
 }
 
-@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
-
-}
 
 a:hover{
     color:#5bb75b;
@@ -640,7 +637,6 @@ span.tag:after {
 
 .event-title {
     font-size: 1.5em;
-    font-size: bold;
 }
 
 .top5 { margin-top:5px; }
@@ -686,7 +682,7 @@ span.tag:after {
 .wrapper {
     border: 1px solid rgba(181, 164, 173, 0.16);
     border-radius: 2px;
-    padding : 0 10 px;
+    padding : 0 10px;
 }
 
 .show-on-hover:hover > ul.dropdown-menu {
@@ -733,4 +729,11 @@ span.tag:after {
 .event-date {
     font-style: italic;
     color:#00008b;
+}
+
+.slogan {
+    font-size:21px;
+    padding-top: 10% ;
+    text-align: left;
+    font-family: helvetica, arial, sans-serif;
 }

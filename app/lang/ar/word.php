@@ -62,7 +62,7 @@ return [
     'phone'                 => 'الهاتف',
     'country'               => 'الدولة',
     'location'              => 'موقع',
-    'admin_panel'           => 'لوحه التحكم للموقع',
+    'admin_panel'           => 'لوحه التحكم ',
     'subscribe'             => ' اشترك ',
     'unsubscribe'           => 'الغاء الاشتراك',
     'follow_event'          => 'متابعة الفعالية',

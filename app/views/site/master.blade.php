@@ -28,9 +28,12 @@
 <body>
 <div class="container">
     <!-- header -->
-    <div class="row" id="header-section">
+    <div class="row" >
         <div class="col-md-4 col-sm-4 col-xs-12 pull-right">
-            <a href="/">{{ HTML::image('images/Logo.png','kaizen',array('class'=>'img-responsive')) }}</a>
+            <a href="/">{{ HTML::image('images/logo.jpeg','kaizen',array('class'=>'img-responsive')) }}</a>
+        </div>
+        <div class="col-md-8 slogan pull-left" >
+            Product Change the World
         </div>
     </div>
 
