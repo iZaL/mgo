@@ -31,9 +31,8 @@
     <!-- header -->
     <div class="row" >
         <div class="col-md-4 col-sm-4 col-xs-12 pull-right">
-            <a href="/">{{ HTML::image('images/logo.png','kaizen',array('class'=>'img-responsive')) }}</a>
+            <a href="/">{{ HTML::image('images/Logo.png','kaizen',array('class'=>'img-responsive')) }}</a>
         </div>
-
 
         <div class="col-md-6 pull-left" >
             <div class="row">
