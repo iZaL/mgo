@@ -769,3 +769,7 @@ span.tag:after {
     text-align: left;
     padding-top: 10px;
 }
+
+.slider-description {
+    padding-top:10px;
+}

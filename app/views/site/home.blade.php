@@ -88,9 +88,7 @@
                         </div>
                     @endforeach
                 </div>
-                <div class="description">
-                    {{ $gallery->description }}
-                </div>
+
             @endif
 
             <div u="navigator" class="jssorb05" style="position: absolute; bottom: 16px; right: 6px; ">
@@ -100,6 +98,11 @@
             <span u="arrowright" class="jssora12r" style="width: 30px; height: 46px; top: 123px; right: 0px"></span>
             <a style="display: none" href="http://www.jssor.com">Image Slider</a>
         </div>
+        @if($gallery)
+            <div class="slider-description">
+                {{$gallery->description}}
+            </div>
+        @endif
     </div>
 
 @stop
