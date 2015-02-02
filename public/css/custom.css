@@ -45,6 +45,10 @@ a:hover {
     background-position: right;
     background-repeat: no-repeat;
     color: #FFF !important;
+    padding-right : 11%;
+    padding-left : 11%;
+
+>>>>>>> b827e517d7a5ea53a5cd96aa76a24de522abd0d6
 }
 
 .panel-body {
