@@ -87,10 +87,9 @@
                             </a>
                         </div>
                     @endforeach
-
-                    <div class="description">
-                        {{ $gallery->description }}
-                    </div>
+                </div>
+                <div class="description">
+                    {{ $gallery->description }}
                 </div>
             @endif
 
