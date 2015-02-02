@@ -39,11 +39,13 @@ a:hover{
     position: relative;
     background-color: transparent !important;
     border-color: none !important;
-    background-image: url("../images/Menu01.png");
+    background-image: url("../images/menu-bg.png");
     background-size: 100%;
     background-position: right;
     background-repeat: no-repeat;
     color: #FFF !important;
+    padding-right : 11%;
+    padding-left : 11%;
 
 }
 
@@ -94,7 +96,7 @@ a:hover{
     width: 102%;
     font-size: 102%;
     border-color: none !important;
-    background-image: url("../images/Menu01.png");
+    background-image: url("../images/menu-bg.png");
 }
 
 .navbar-default .navbar-brand {
