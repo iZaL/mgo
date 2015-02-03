@@ -7,16 +7,15 @@ html {
     background: -ms-linear-gradient(top, #273466 0%, #11467c 100%); *//* IE10+ *//*
     background: linear-gradient(to bottom, #273466 0%, #11467c 100%); *//* W3C *//*
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#273466', endColorstr='#11467c', GradientType=0); *//* IE6-9 */
-    background-color: #c1ceff !important;
+    background-color: #E6EEF5 !important;
     background-size: cover;
 }
 
-.container-fluid {
+body>.container-fluid {
     background-size: 10px;
-
+    padding-right: 3%;
+    padding-left: 3%;
     /*background-image: url('../images/background.png') !important;*/
-
-
 }
 
 #header-section {
@@ -79,6 +78,7 @@ a:hover {
 .nav li {
     min-width: 16%;
     padding: 5px;
+    float: left;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -86,7 +86,7 @@ a:hover {
     top: 0px;
     position: relative;
     background-color: transparent !important;
-    background-image: url("../images/menu-bg.png");
+    /*background-image: url("../images/menu-bg.png");*/
     background-size: 100%;
     background-position: right;
     background-repeat: no-repeat;
@@ -102,7 +102,7 @@ a:hover {
     color: #020031 !important;
     width: 102%;
     font-size: 102%;
-    background-image: url("../images/menu-bg.png");
+    /*background-image: url("../images/menu-bg.png");*/
 }
 
 .navbar-default .navbar-brand {
@@ -389,6 +389,8 @@ a:hover {
 .timeline-body > p + p {
     margin-top: 5px;
 }
+
+
 
 @media (max-width: 767px) {
 
@@ -770,7 +772,7 @@ span.tag:after {
 .locale {
     display: block;
     font-size: 16px;
-    text-align: left;
+    text-align: center;
     padding-top: 10px;
 }
 
