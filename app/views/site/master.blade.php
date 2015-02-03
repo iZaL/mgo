@@ -27,10 +27,10 @@
 </head>
 
 <body>
-<div class="container">
+<div class="container-fluid">
     <!-- header -->
     <div class="row" >
-        <div class="col-md-4 col-sm-4 col-xs-12 pull-right">
+        <div class="col-md-3 col-sm-3 col-xs-12 pull-right">
             <a href="/">{{ HTML::image('images/Logo.png','kaizen',array('class'=>'img-responsive')) }}</a>
         </div>
 
@@ -39,7 +39,7 @@
                 <div class="col-md-12 locale">
                     @include('site.partials.locale')
                 </div>
-                <div class="col-md-12 slogan">
+                <div class="col-md-8 slogan">
                     {{ HTML::image('images/slogan.png','kaizen',array('class'=>'img-responsive')) }}
                 </div>
             </div>
