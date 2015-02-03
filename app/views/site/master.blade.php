@@ -7,21 +7,24 @@
     @section('style')
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+        @import url(http://fonts.googleapis.com/css?family=PT+Sans);
 
-            html, body {
-                font-family: 'Droid Arabic Kufi' !important;
-            }
+                html, body {
+                    font-family: 'Droid Arabic Kufi','PT Sans' !important;
+                    font-weight: bold;
+                }
 
-            h1, h2, h3, h4, span, p, div, table {
-                font-family: 'Droid Arabic Kufi' !important;
-            }
-        </style>
+                h1, h2, h3, h4, span, p, div, table {
+                    font-family: 'Droid Arabic Kufi','PT Sans' !important;
+                }
+            </style>
+        @if ( App::getLocale() == 'ar')
+            {{ HTML::style('css/bootstrap-rtl.min.css') }}
+        @endif
         {{ HTML::style('css/bootstrap.min.css') }}
         {{ HTML::style('css/font-awesome.min.css') }}
         {{ HTML::style('css/intlTelInput.css'); }}
-    @if ( App::getLocale() == 'ar')
-            {{ HTML::style('css/bootstrap-rtl.min.css') }}
-        @endif
+
         {{ HTML::style('css/custom.css') }}
     @show
 </head>
