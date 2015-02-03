@@ -33,11 +33,23 @@
 <div class="container-fluid">
     <!-- header -->
     <div class="row" >
-        <div class="col-md-3 col-sm-3 col-xs-12 pull-right">
+        <div class="col-md-3 col-sm-3 col-xs-12
+        @if ( App::getLocale() == 'ar')
+        {{ 'pull-right' }}
+        @else
+        {{ 'pull-left' }}
+        @endif
+        ">
             <a href="/">{{ HTML::image('images/Logo.png','kaizen',array('class'=>'img-responsive')) }}</a>
         </div>
 
-        <div class="col-md-6 pull-left" >
+        <div class="col-md-6
+          @if ( App::getLocale() == 'en')
+        {{ 'pull-right' }}
+        @else
+        {{ 'pull-left' }}
+        @endif
+        " >
             <div class="row">
                 <div class="col-md-12 locale">
                     @include('site.partials.locale')
