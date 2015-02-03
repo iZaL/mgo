@@ -13,6 +13,8 @@ html {
 
 .container-fluid {
     background-size: 10px;
+    margin: 0px;
+    padding: 25px;
 
     /*background-image: url('../images/background.png') !important;*/
 
@@ -389,6 +391,8 @@ a:hover {
 .timeline-body > p + p {
     margin-top: 5px;
 }
+
+
 
 @media (max-width: 767px) {
 
