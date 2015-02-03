@@ -78,6 +78,7 @@ a:hover {
 .nav li {
     min-width: 16%;
     padding: 5px;
+    float: left;
 }
 
 .navbar-default .navbar-nav > li > a {

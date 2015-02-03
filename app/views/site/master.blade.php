@@ -19,12 +19,16 @@
                 }
             </style>
         @if ( App::getLocale() == 'ar')
+            <style>
+                .nav li {
+                    float: right !important;
+                }
+            </style>
             {{ HTML::style('css/bootstrap-rtl.min.css') }}
         @endif
         {{ HTML::style('css/bootstrap.min.css') }}
         {{ HTML::style('css/font-awesome.min.css') }}
         {{ HTML::style('css/intlTelInput.css'); }}
-
         {{ HTML::style('css/custom.css') }}
     @show
 </head>
