@@ -5,8 +5,8 @@
 @stop
 @section('style')
     @parent
-    {{ HTML::style('css/royalslider.css') }}
-    <link class="rs-file" href="{{ asset('css/rs-default.css') }}" rel="stylesheet">
+    {{ HTML::style('packages/royalslider/royalslider.css') }}
+    {{ HTML::style('packages/royalslider/skins/default/rs-default.css') }}
     <style>
         #gallery-1 {
             width: 100%;
@@ -32,9 +32,9 @@
                 @foreach($album->photos as $photo)
                     <div class="rsContent">
                         @if($i==0)
-                            <a class="rsImg bugaga" data-rsbigimg="{{  asset('uploads/large/'.$photo->name) }}" href="{{  asset('uploads/large/'.$photo->name) }}">{{ $photo->title }}</a>
+                            <a class="rsImg bugaga" data-rsw="400" data-rsh="500" data-rsbigimg="{{  asset('uploads/large/'.$photo->name) }}" href="{{  asset('uploads/large/'.$photo->name) }}">{{ $photo->title }}</a>
                         @else
-                            <a class="rsImg" data-rsbigimg="{{  asset('uploads/large/'.$photo->name) }}" href="{{  asset('uploads/large/'.$photo->name) }}">{{ $photo->title }}</a>
+                            <a class="rsImg" data-rsw="632" data-rsh="500" data-rsbigimg="{{  asset('uploads/large/'.$photo->name) }}" href="{{  asset('uploads/large/'.$photo->name) }}">{{ $photo->title }}</a>
                         @endif
                         {{ HTML::image('uploads/thumbnail/'.$photo->name.'',$photo->name,array('class'=>'rsTmb','width'=> '96', 'height'=>'72')) }}
                         <?php $i ++; ?>
@@ -43,7 +43,6 @@
             @endif
         </div>
     </div>
-
 
     <div class="col-md-12">
         <div class="description">
@@ -90,7 +89,7 @@
 
 @section('script')
     @parent
-    {{ HTML::script('js/jquery.royalslider.min.js') }}
+    {{ HTML::script('packages/royalslider/jquery.royalslider.min.js') }}
     <script id="addJS">
         jQuery(document).ready(function ($) {
             $('#gallery-1').royalSlider({
