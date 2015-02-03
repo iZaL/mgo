@@ -1,184 +1,178 @@
 <!-- Extends From Two Column Layou -->
-@extends('site.layouts._two_column')
+@extends('site.layouts._home')
 
 @section('style')
     @parent
+    {{ HTML::style('packages/royalslider/royalslider.css') }}
+    {{ HTML::style('packages/royalslider/skins/minimal-white/rs-minimal-white.css') }}
     <style>
-        .jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
-            background: url(/packages/jssor-slider/img/b05.png) no-repeat;
-            overflow: hidden;
-            cursor: pointer;
+        #full-width-slider {
+            width: 100%;
+            color: #000;
         }
-
-        .jssorb05 div {
-            background-position: -7px -7px;
+        .coloredBlock {
+            padding: 12px;
+            background: rgba(255, 0, 0, 0.6);
+            color: #FFF;
+            width: 200px;
+            left: 20%;
+            top: 5%;
         }
-
-        .jssorb05 div:hover, .jssorb05 .av:hover {
-            background-position: -37px -7px;
-        }
-
-        .jssorb05 .av {
-            background-position: -67px -7px;
-        }
-
-        .jssorb05 .dn, .jssorb05 .dn:hover {
-            background-position: -97px -7px;
-        }
-
-        .jssora12l, .jssora12r, .jssora12ldn, .jssora12rdn {
+        .infoBlock {
             position: absolute;
-            cursor: pointer;
-            display: block;
-            background: url(/packages/jssor-slider/img/a12.png) no-repeat;
+            top: 30px;
+            right: 30px;
+            left: auto;
+            max-width: 25%;
+            padding-bottom: 0;
+            background: #FFF;
+            background: rgba(255, 255, 255, 0.8);
             overflow: hidden;
+            padding: 20px;
         }
 
-        .jssora12l {
-            background-position: -16px -37px;
+        .infoBlockLeftBlack {
+            color: #FFF;
+            background: #000;
+            background: rgba(0, 0, 0, 0.75);
+            left: 30px;
+            right: auto;
+        }
+        .infoBlock h4 {
+            font-size: 20px;
+            line-height: 1.2;
+            margin: 0;
+            padding-bottom: 3px;
         }
 
-        .jssora12r {
-            background-position: -75px -37px;
+        .infoBlock p {
+            font-size: 14px;
+            margin: 4px 0 0;
         }
 
-        .jssora12l:hover {
-            background-position: -136px -37px;
+        .infoBlock a {
+            color: #FFF;
+            text-decoration: underline;
         }
 
-        .jssora12r:hover {
-            background-position: -195px -37px;
+        .photosBy {
+            position: absolute;
+            line-height: 24px;
+            font-size: 12px;
+            background: #FFF;
+            color: #000;
+            padding: 0px 10px;
+            position: absolute;
+            left: 12px;
+            bottom: 12px;
+            top: auto;
+            border-radius: 2px;
+            z-index: 25;
         }
 
-        .jssora12ldn {
-            background-position: -256px -37px;
+        .photosBy a {
+            color: #000;
         }
 
-        .jssora12rdn {
-            background-position: -315px -37px;
+        .fullWidth {
+            max-width: 1400px;
+            margin: 0 auto 24px;
+        }
+
+        @media screen and (min-width: 960px) and (min-height: 660px) {
+            .heroSlider .rsOverflow,
+            .royalSlider.heroSlider {
+                height: 520px !important;
+            }
+        }
+
+        @media screen and (min-width: 960px) and (min-height: 1000px) {
+            .heroSlider .rsOverflow,
+            .royalSlider.heroSlider {
+                height: 660px !important;
+            }
+        }
+
+        @media screen and (min-width: 0px) and (max-width: 800px) {
+            .royalSlider.heroSlider,
+            .royalSlider.heroSlider .rsOverflow {
+                height: 300px !important;
+            }
+
+            .infoBlock {
+                padding: 10px;
+                height: auto;
+                max-height: 100%;
+                min-width: 40%;
+                left: 5px;
+                top: 5px;
+                right: auto;
+                font-size: 12px;
+            }
+
+            .infoBlock h3 {
+                font-size: 14px;
+                line-height: 17px;
+            }
         }
     </style>
-    @stop
+@stop
 
-            <!-- Content Section -->
-@section('content')
-    @parent
+@section('slider')
     <div class="col-md-12">
-        <div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 600px; height: 350px; overflow: hidden; ">
-            <div u="loading" style="position: absolute; top: 0px; left: 0px;">
-                <div style="filter: alpha(opacity=70); opacity:0.7; position: absolute; display: block;
-                background-color: #000000; top: 0px; left: 0px;width: 100%;height:100%;">
-                </div>
-                <div style="position: absolute; display: block; background: url(/packages/jssor-slider/img/loading.gif) no-repeat center center;
-                top: 0px; left: 0px;width: 100%;height:100%;">
-                </div>
-            </div>
-
-            @if($gallery && count($gallery->photos))
-                <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 600px; height: 350px; overflow: hidden;">
+        <div class="sliderContainer fullWidth clearfix">
+            <div id="full-width-slider" class="royalSlider heroSlider rsMinW">
+                @if($gallery && count($gallery->photos))
                     @foreach($gallery->photos as $photo)
-                        <div>
-                            <a u="image" href="{{action('GalleriesController@show',$gallery->id)}}">
-                                <img src="/uploads/large/{{$photo->name}}"/>
-
-                                <div u="caption" t="team-transition" style="position: absolute; bottom: 0px; width: 100%;height: 80px; background:#000 ; opacity: .8">
-                                    <h2 style="text-align: center; color:#F0F0EE">{{$gallery->title}}</h2>
-                                </div>
-                            </a>
+                        <div class="rsContent">
+                            <img class="rsImg" src="/uploads/large/{{$photo->name}}"/>
                         </div>
                     @endforeach
-                </div>
-
-            @endif
-
-            <div u="navigator" class="jssorb05" style="position: absolute; bottom: 16px; right: 6px; ">
-                <div u="prototype" style="POSITION: absolute; WIDTH: 16px; HEIGHT: 16px;"></div>
+                @endif
             </div>
-            <span u="arrowleft" class="jssora12l" style="width: 30px; height: 46px; top: 123px; left: 0px;"></span>
-            <span u="arrowright" class="jssora12r" style="width: 30px; height: 46px; top: 123px; right: 0px"></span>
-            <a style="display: none" href="http://www.jssor.com">Image Slider</a>
         </div>
-        @if($gallery)
-            <div class="slider-description">
-                {{$gallery->description}}
-            </div>
-        @endif
-    </div>
 
+    </div>
+@stop
+@section('content')
+    @if($gallery)
+        <div class="slider-description">
+            {{$gallery->description}}
+        </div>
+    @endif
 @stop
 
 @section('script')
     @parent
-    <script src="{{ asset('/packages/jssor-slider/js/jssor.slider.mini.js') }}"></script>
+    {{ HTML::script('packages/royalslider/jquery.royalslider.min.js') }}
     <script>
-
         jQuery(document).ready(function ($) {
-
-            var _SlideshowTransitions = [
-                //Fade
-                {$Duration: 1200, $Opacity: 2}
-            ];
-
-            var options = {
-                $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
-                $AutoPlaySteps: 1,                                  //[Optional] Steps to go for each navigation request (this options applys only when slideshow disabled), the default value is 1
-                $AutoPlayInterval: 3000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
-                $PauseOnHover: 1,                               //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
-
-                $ArrowKeyNavigation: false,   			            //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
-                $SlideDuration: 500,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
-                $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
-                //$SlideWidth: 600,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
-                //$SlideHeight: 300,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
-                $SlideSpacing: 0, 					                //[Optional] Space between each slide in pixels, default value is 0
-                $DisplayPieces: 1,                                  //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
-                $ParkingPosition: 0,                                //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
-                $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
-                $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
-                $DragOrientation: 3,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
-
-                $SlideshowOptions: {                                //[Optional] Options to specify and enable slideshow or not
-                    $Class: $JssorSlideshowRunner$,                 //[Required] Class to create instance of slideshow
-                    $Transitions: _SlideshowTransitions,            //[Required] An array of slideshow transitions to play slideshow
-                    $TransitionsOrder: 1,                           //[Optional] The way to choose transition to play slide, 1 Sequence, 0 Random
-                    $ShowLink: true                                    //[Optional] Whether to bring slide link on top of the slider when slideshow is running, default value is false
+            $('#full-width-slider').royalSlider({
+                arrowsNav: true,
+                loop: false,
+                keyboardNavEnabled: true,
+                controlsInside: false,
+                imageScaleMode: 'fill',
+                arrowsNavAutoHide: false,
+                autoScaleSlider: true,
+                autoScaleSliderWidth: 960,
+                autoScaleSliderHeight: 350,
+                controlNavigation: 'bullets',
+                thumbsFitInViewport: false,
+                navigateByClick: true,
+                startSlideId: 0,
+                autoPlay: false,
+                transitionType: 'move',
+                globalCaption: false,
+                deeplinking: {
+                    enabled: true,
+                    change: false
                 },
-
-                $BulletNavigatorOptions: {                                //[Optional] Options to specify and enable navigator or not
-                    $Class: $JssorBulletNavigator$,                       //[Required] Class to create navigator instance
-                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
-                    $AutoCenter: 1,                                 //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
-                    $Steps: 1,                                      //[Optional] Steps to go for each navigation request, default value is 1
-                    $Lanes: 1,                                      //[Optional] Specify lanes to arrange items, default value is 1
-                    $SpacingX: 10,                                   //[Optional] Horizontal space between each item in pixel, default value is 0
-                    $SpacingY: 10,                                   //[Optional] Vertical space between each item in pixel, default value is 0
-                    $Orientation: 1                                 //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
-                },
-
-                $ArrowNavigatorOptions: {
-                    $Class: $JssorArrowNavigator$,              //[Requried] Class to create arrow navigator instance
-                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
-                    $Steps: 1                                       //[Optional] Steps to go for each navigation request, default value is 1
-                }
-            };
-            var jssor_slider1 = new $JssorSlider$("slider1_container", options);
-
-            //responsive code begin
-            //you can remove responsive code if you don't want the slider scales while window resizes
-            function ScaleSlider() {
-                var parentWidth = jssor_slider1.$Elmt.parentNode.clientWidth;
-                if (parentWidth)
-                    jssor_slider1.$ScaleWidth(Math.min(parentWidth, 600));
-                else
-                    window.setTimeout(ScaleSlider, 30);
-            }
-
-            ScaleSlider();
-
-            $(window).bind("load", ScaleSlider);
-            $(window).bind("resize", ScaleSlider);
-            $(window).bind("orientationchange", ScaleSlider);
-            //responsive code end
+                /* size of all images http://help.dimsemenov.com/kb/royalslider-jquery-plugin-faq/adding-width-and-height-properties-to-images */
+                imgWidth: 1400,
+                imgHeight: 680
+            });
         });
+
     </script>
 @stop
