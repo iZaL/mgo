@@ -33,6 +33,6 @@ class GalleryRepository extends BaseRepository {
      */
     public function getImageSlider()
     {
-        return $this->model->with(['photos'])->has('photos')->latest()->first();
+        return $this->model->with(['photos','homeCategory'])->has('photos')->has('homeCategory')->latest()->first();
     }
 }

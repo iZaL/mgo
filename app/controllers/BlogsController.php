@@ -62,7 +62,7 @@ class BlogsController extends BaseController {
                 ->orderBy('created_at', 'ASC')
                 ->paginate(10);
         } else {
-            $posts = $this->blogRepository->getAllPaginated(['category', 'photos', 'author']);
+            $posts = $this->blogRepository->model->with(['category', 'photos', 'author'])->has('category')->latest()->paginate(10);
         }
 
         $categories = $this->categoryRepository->getPostCategories()->get();

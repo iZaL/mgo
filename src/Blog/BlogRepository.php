@@ -39,8 +39,21 @@ class BlogRepository extends BaseRepository {
     {
         return $this->model->select('posts.*')
             ->leftJoin('categories', 'categories.id', '=', 'posts.category_id')
-            ->where('categories.name_en', '=', 'About')
+            ->where('categories.name_en', '=', 'about')
+            ->where('categories.type', '=', 'Post')
             ->orderBy('posts.created_at', 'DESC')
             ->limit(1);
+    }
+
+    public function getHomePageDescription()
+    {
+        return $this->model->select('posts.*')
+            ->leftJoin('categories', 'categories.id', '=', 'posts.category_id')
+            ->where('categories.name_en', '=', 'homepage')
+            ->where('categories.type', '=', 'Post')
+            ->orderBy('posts.created_at', 'DESC')
+            ->limit(1)
+            ->get()
+            ;
     }
 }

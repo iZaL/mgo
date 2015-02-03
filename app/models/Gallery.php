@@ -14,7 +14,12 @@ class Gallery extends BaseModel {
 
     public function category()
     {
-        return $this->belongsTo('Category', 'category_id')->where('type', '=', 'Gallery');
+        return $this->belongsTo('Category', 'category_id')->where('type', '=', 'Gallery')->where('name_en','!=','homepage');
+    }
+
+    public function homeCategory()
+    {
+        return $this->belongsTo('Category', 'category_id')->where('type', '=', 'Gallery')->where('name_en','homepage');
     }
 
     public function photos()

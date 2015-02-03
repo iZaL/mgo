@@ -29,7 +29,7 @@ class Blog extends BaseModel implements PresenterInterface {
 
     public function category()
     {
-        return $this->belongsTo('Category', 'category_id');
+        return $this->belongsTo('Category', 'category_id')->where('name_en','!=','about')->where('name_en','!=','homepage');
     }
 
     public function photos()
@@ -54,7 +54,7 @@ class Blog extends BaseModel implements PresenterInterface {
 
     public function latest($count)
     {
-        return $this->orderBy('created_at', 'DESC')->remember(10)->limit($count)->get();
+        return $this->orderBy('created_at', 'DESC')->has('category')->remember(10)->limit($count)->get();
     }
 
     public function beforeDelete()

@@ -40,7 +40,9 @@ class GalleriesController extends BaseController {
      */
     public function index()
     {
-        $galleries = $this->galleryRepository->getAllPaginated(['photos', 'category']);
+//        $galleries = $this->galleryRepository->getAllPaginated(['photos', 'category']);
+        $galleries = $this->galleryRepository->model->with(['category', 'photos'])->has('category')->latest()->paginate(10);
+
 
         $this->render('site.galleries.index', compact('galleries'));
 

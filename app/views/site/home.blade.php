@@ -137,7 +137,9 @@
 @section('content')
     @if($gallery)
         <div class="slider-description">
-            {{$gallery->description}}
+            @if($description)
+                {{$description->description}}
+            @endif
         </div>
     @endif
 @stop

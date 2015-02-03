@@ -53,10 +53,6 @@ abstract class BaseController extends Controller {
      */
     public function initSidebarPosts()
     {
-        View::composer('site.events._latest', function ($view) {
-            $latest_event_posts = App::make('EventModel')->latest(4);
-            $view->with(array('latest_event_posts' => $latest_event_posts));
-        });
         View::composer('site.blog._latest', function ($view) {
             $latest_blog_posts = App::make('Blog')->latest(4);
             $view->with(array('latest_blog_posts' => $latest_blog_posts));

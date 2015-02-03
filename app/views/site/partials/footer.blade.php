@@ -13,9 +13,6 @@
             <div class="col-md-6">
                 Copyrights &copy; Magnesim Board <?php echo date('Y'); ?>
             </div>
-            <div class="col-md-6">
-                جميع الحقوق محفوظة ـ شركة ماجنيسيوم
-            </div>
             <div class="col-md-12">
                 Site Developed By <a href="http://ideasowners.net" target="_blank">IdeasOwners.net</a>
             </div>

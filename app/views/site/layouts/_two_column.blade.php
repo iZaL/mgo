@@ -6,7 +6,6 @@
 
 <div class="col-md-4 col-xs-12">
     @section('sidebar')
-        @include('site.blog.search')
         @include('site.blog._latest')
         @include('site.partials.login')
         @include('site.partials.newsletter')
